@@ -134,7 +134,7 @@
                     </li>
                     @canany(['superAdmin','admin'])
                     <li class="nav-item">
-                        <a href="guest" class="nav-link active">
+                        <a href="../guest" class="nav-link active">
                             <i class="nav-icon fas fa-edit"></i>
                             <p>Form Daftar Hadir</p>
                         </a>
@@ -143,7 +143,7 @@
 
                     @can('admin')
                     <li class="nav-item">
-                        <a href="program" class="nav-link active">
+                        <a href="../program" class="nav-link active">
                             <i class="nav-icon fas fa-edit"></i>
                             <p>Form Daftar Kegiatan</p>
                         </a>
