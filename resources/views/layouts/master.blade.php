@@ -64,11 +64,24 @@
                     <i class="fas fa-expand-arrows-alt"></i>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                    <i class="fas fa-th-large"></i>
-                </a>
-            </li>
+
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+
+{{-- LOG OUT --}}
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">--}}
+{{--                    <i class="fas fa-th-large"></i>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+
         </ul>
     </nav>
     <!-- /.navbar -->
@@ -79,7 +92,7 @@
         <a href="../../index3.html" class="brand-link">
             <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
+            <span class="brand-text font-weight-light">Sistem Absensi</span>
         </a>
 
         <!-- Sidebar -->
@@ -90,7 +103,7 @@
                     <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">User</a>
+                    <a href="#" class="d-block">{{ auth()->user()->name }}</a>
                 </div>
             </div>
 
@@ -127,7 +140,7 @@
                         </a>
                     </li>
                     @endcanany
-                    
+
                     @can('admin')
                     <li class="nav-item">
                         <a href="program" class="nav-link active">
@@ -166,7 +179,7 @@
         <section class="content">
             @yield('content')
         </section>
-        
+
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
