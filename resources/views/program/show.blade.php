@@ -56,7 +56,7 @@
                 </div>
                 <br>
             </div>
-            <a class="btn btn-primary" href="../../guest"> Create Link</a>
+            <a class="btn btn-primary" href="../guest"> Create Link</a>
             &nbsp &nbsp &nbsp
             <a class="btn btn-primary" href="#"> QR Code</a>
         </div>
