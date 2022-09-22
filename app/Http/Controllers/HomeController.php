@@ -11,6 +11,10 @@ class HomeController extends Controller
      *
      * @return void
      */
+
+     // pemberian hak akses 
+    //  $this->middleware('can:admin');
+
     public function __construct()
     {
         $this->middleware('auth');
