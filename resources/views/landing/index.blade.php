@@ -75,7 +75,7 @@
             <!--<h1><a href="#hero">Bell</a></h1>-->
         </div>
 
-      
+
 
         <div class="header-social-links d-flex align-items-center">
             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -170,55 +170,55 @@
     </section><!-- End Features Section -->
 
     <!-- ======= Foto Rapat ======= -->
-    <section class="team" id="team">
-        <div class="container">
-            <h2 class="text-center">
-                Dokumentasi Kegiatan Rapat
-            </h2>
+{{--    <section class="team" id="team">--}}
+{{--        <div class="container">--}}
+{{--            <h2 class="text-center">--}}
+{{--                Dokumentasi Kegiatan Rapat--}}
+{{--            </h2>--}}
 
-            <div class="row">
-                <div class="col-sm-3 col-xs-6">
-                    <div class="card card-block">
-                        <img alt="" class="team-img" src="{{asset('landing/assets/img/rapat-1.webp')}}">
-                            <div class="card-title-wrap">
-                                <span class="card-title">Rapat 1</span> <span class="card-text">Rapat BBM</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+{{--            <div class="row">--}}
+{{--                <div class="col-sm-3 col-xs-6">--}}
+{{--                    <div class="card card-block">--}}
+{{--                        <img alt="" class="team-img" src="{{asset('landing/assets/img/rapat-1.webp')}}">--}}
+{{--                            <div class="card-title-wrap">--}}
+{{--                                <span class="card-title">Rapat 1</span> <span class="card-text">Rapat BBM</span>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="col-sm-3 col-xs-6">
-                    <div class="card card-block">
-                        <img alt="" class="team-img" src="{{asset('landing/assets/img/rapat-1.webp')}}">
-                            <div class="card-title-wrap">
-                                <span class="card-title">Rapat 2</span> <span class="card-text">Rapat Korupsi</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+{{--                <div class="col-sm-3 col-xs-6">--}}
+{{--                    <div class="card card-block">--}}
+{{--                        <img alt="" class="team-img" src="{{asset('landing/assets/img/rapat-1.webp')}}">--}}
+{{--                            <div class="card-title-wrap">--}}
+{{--                                <span class="card-title">Rapat 2</span> <span class="card-text">Rapat Korupsi</span>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="col-sm-3 col-xs-6">
-                    <div class="card card-block">
-                        <img alt="" class="team-img" src="{{asset('landing/assets/img/rapat-1.webp')}}">
-                            <div class="card-title-wrap">
-                                <span class="card-title">Rapat 3</span> <span class="card-text">Rapat Kegiatan</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+{{--                <div class="col-sm-3 col-xs-6">--}}
+{{--                    <div class="card card-block">--}}
+{{--                        <img alt="" class="team-img" src="{{asset('landing/assets/img/rapat-1.webp')}}">--}}
+{{--                            <div class="card-title-wrap">--}}
+{{--                                <span class="card-title">Rapat 3</span> <span class="card-text">Rapat Kegiatan</span>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="col-sm-3 col-xs-6">
-                    <div class="card card-block">
-                        <img alt="" class="team-img" src="{{asset('landing/assets/img/rapat-1.webp')}}">
-                            <div class="card-title-wrap">
-                                <span class="card-title">Rapat 4</span> <span class="card-text">Rapat Sembako</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{{--                <div class="col-sm-3 col-xs-6">--}}
+{{--                    <div class="card card-block">--}}
+{{--                        <img alt="" class="team-img" src="{{asset('landing/assets/img/rapat-1.webp')}}">--}}
+{{--                            <div class="card-title-wrap">--}}
+{{--                                <span class="card-title">Rapat 4</span> <span class="card-text">Rapat Sembako</span>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- End Team Section -->
 </main><!-- End #main -->
 

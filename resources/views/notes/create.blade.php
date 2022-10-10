@@ -1,11 +1,19 @@
-@extends('template_tinymce')
+{{--@extends('template_tinymce')--}}
+@extends('layouts.master')
+@section('title')
+    <title> Notulensi </title>
+@endsection
+@section('header')
+    <h1>Notulensi Kegiatan</h1>
+@endsection
+@section('subheader')
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active">Notulensi</li>
+@endsection
 
 @section('content')
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
-            <div class="float-left">
-                <h2>Create</h2>
-            </div>
             <div class="float-right">
                 <a class="btn btn-secondary" href="{{ route('notes.index') }}"> Back</a>
             </div>

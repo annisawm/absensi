@@ -124,9 +124,32 @@
                                 @enderror
                             </div>
 
+{{--                            <div class="form-group">--}}
+{{--                                <label class="font-weight-bold">Signature:</label>--}}
+{{--                                <br/>--}}
+{{--                                <div id="sig"></div>--}}
+{{--                                <br/>--}}
+{{--                                <button id="clear" class="btn btn-danger btn-sm">Clear Signature</button>--}}
+{{--                                <textarea id="signature64" name="signed" style="display: none"></textarea>--}}
+{{--                            </div>--}}
+
+{{--                            <div class="form-group">--}}
+{{--                                <a href="../signaturepad" class="btn btn-md btn-success mb-3" target="_blank">TTD</a>--}}
+{{--                            </div>--}}
+
                             <div class="form-group">
-                                <a href="../signaturepad" class="btn btn-md btn-success mb-3" target="_blank">TTD</a>
+                                <label class="font-weight-bold">TTD</label>
+                                <input type="text" class="form-control @error('ttd') is-invalid @enderror"
+                                       name="ttd" value="{{ old('ttd') }}" placeholder="Masukkan TTD">
+
+                                <!-- error message untuk title -->
+                                @error('ttd')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                             </div>
+
                             <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
                             <button type="reset" class="btn btn-md btn-warning">RESET</button>
                         </form>
@@ -154,3 +177,5 @@
         });
     </script>
 @endpush
+
+

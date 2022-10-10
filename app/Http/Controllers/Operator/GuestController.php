@@ -41,7 +41,7 @@ class GuestController extends Controller
             'jenis_kelamin' => 'required',
             'nama_instansi' => 'required',
             'jabatan' => 'required',
-            'no_hp' => 'required',
+            'no_hp' => 'required|numeric',
             'ttd' => 'required',
         ]);
 
