@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Operator;
 
 use App\Http\Controllers\Controller;
 use App\Models\Guest;
+use App\Models\Opd;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -30,7 +31,8 @@ class GuestController extends Controller
 
     public function create()
     {
-        return view('guest.create');
+        $opd = Opd::all();
+        return view('guest.create', compact('opd'));
     }
 
     public function store(Request $request)
@@ -39,7 +41,7 @@ class GuestController extends Controller
             'nip' => 'nullable|numeric|digits: 18',
             'nama' => 'required',
             'jenis_kelamin' => 'required',
-            'nama_instansi' => 'required',
+            'opd_kode' => 'required',
             'jabatan' => 'required',
             'no_hp' => 'required|numeric',
             'ttd' => 'required',

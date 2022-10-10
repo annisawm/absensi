@@ -3,6 +3,7 @@
 use App\Http\Controllers\Operator\GuestController;
 use App\Http\Controllers\Operator\ProgramController;
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\OpdController;
 use App\Http\Controllers\SignaturePadController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,7 @@ Route::resource('/guest', GuestController::class);
 Route::get('/program/notes/{id}', [ProgramController::class, 'notes'])->name('program.notes');
 Route::resource('/program', ProgramController::class);
 Route::resource('/notes', NoteController::class);
+Route::resource('/opds', OpdController::class);
 
 Auth::routes();
 
