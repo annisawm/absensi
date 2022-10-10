@@ -21,7 +21,7 @@
                             <thead>
                             <tr>
                                 <th scope="col">NO</th>
-                                <th scope="col">ACARA</th>
+                                <th scope="col">ACARA/KEGIATAN</th>
                                 <th scope="col">TANGGAL KEGIATAN</th>
                                 <th scope="col">WAKTU KEGIATAN</th>
                                 <th scope="col">TEMPAT</th>

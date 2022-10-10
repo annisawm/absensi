@@ -36,17 +36,21 @@
     <table class="table table-bordered">
         <tr>
             <th width="20px" class="text-center">No</th>
-            <th>Judul</th>
+            <th>Judul Notulensi</th>
+            <th>Acara/Kegiatan</th>
+            <th>Tanggal Kegiatan</th>
             <th width="280px"class="text-center">Action</th>
         </tr>
         @foreach ($notes as $note)
             <tr>
                 <td class="text-center">{{ ++$i }}</td>
                 <td>{{ $note->judul }}</td>
+                <td>{!! $note->acara !!}</td>
+                <td>{!! $note->tanggal !!}</td>
                 <td class="text-center">
                     <form action="{{ route('notes.destroy',$note->id) }}" method="POST">
 
-                        <a class="btn btn-info btn-sm" href="{{ route('notes.show',$note->id) }}">Show</a>
+                        <a class="btn btn-info btn-sm" href="{{ route('notes.show',$note->id) }}">View</a>
 
                         <a class="btn btn-primary btn-sm" href="{{ route('notes.edit',$note->id) }}">Edit</a>
 

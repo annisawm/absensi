@@ -1,5 +1,5 @@
-{{--@extends('template_tinymce')--}}
-@extends('layouts.master')
+@extends('template_tinymce')
+{{--@extends('layouts.master')--}}
 @section('title')
     <title> Notulensi </title>
 @endsection

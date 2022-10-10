@@ -29,7 +29,7 @@
                                 <th scope="col">NIP</th>
                                 <th scope="col">NAMA</th>
                                 <th scope="col">JENIS KELAMIN(L/P)</th>
-                                <th scope="col">NAMA INSTANSI</th>
+                                <th scope="col">NAMA INSTANSI(OPD)</th>
                                 <th scope="col">JABATAN</th>
                                 <th scope="col">NO.HP</th>
                                 <th scope="col">TTD</th>
