@@ -13,6 +13,7 @@ class ProgramController extends Controller
     public function index()
     {
         $programs = Program::latest()->paginate(10);
+
         return view('program.index', compact('programs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);;
     }
@@ -51,6 +52,12 @@ class ProgramController extends Controller
     public function show(program $program)
     {
         return view('program.show', compact('program'));
+    }
+
+    public function notes($id)
+    {
+        $program = Program::find($id);
+        return view('program.note', compact('program'));
     }
 
     public function edit(program $program)
