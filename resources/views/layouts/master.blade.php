@@ -168,7 +168,6 @@
                         </a>
                     </li>
                     @endcan
-
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

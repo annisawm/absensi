@@ -15,6 +15,15 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <form action="{{ route('guest.store') }}" method="POST" enctype="multipart/form-data">
 
                             @csrf
@@ -86,12 +95,14 @@
 
                             <div class="form-group">
                                 <label class="font-weight-bold">NAMA INSTANSI</label>
-                                <input type="text" class="form-control @error('nama_instansi') is-invalid @enderror"
-                                       name="nama_instansi" value="{{ old('nama_instansi') }}"
-                                       placeholder="Masukkan Nama Instansi">
-
-                                <!-- error message untuk title -->
-                                @error('instansi')
+                                <br>
+                                <select name="opd_kode" id="opd_kode">
+                                    <option value="0">Pilih</option>
+                                    @foreach($opd as $skpd)
+                                    <option value="{{$skpd->kode}}">{{$skpd->nama_opd}}</option>
+                                    @endforeach
+                                </select>
+                                @error('opd_kode')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
                                 </div>

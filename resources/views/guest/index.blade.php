@@ -73,8 +73,8 @@
                         name: 'jenis_kelamin'
                     },
                     {
-                        data: 'nama_instansi',
-                        name: 'nama_instansi'
+                        data: 'opds.singkatan',
+                        name: 'opds.singkatan'
                     },
                     {
                         data: 'jabatan',

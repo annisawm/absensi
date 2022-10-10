@@ -57,6 +57,6 @@ class NoteController extends Controller
     {
         $note->delete();
         return redirect()->route('notes.index')
-            ->with('success', 'Noteulensi Berhasil Di Hapus');
+            ->with('success', 'Notulensi Berhasil Di Hapus');
     }
 }
