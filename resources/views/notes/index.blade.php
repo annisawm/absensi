@@ -21,9 +21,6 @@
             <div class="float-left">
                 <h2>Notulensi</h2>
             </div>
-            <div class="float-right">
-                <a class="btn btn-success" href="{{ route('notes.create') }}">Tambah</a>
-            </div>
         </div>
     </div>
 
@@ -45,8 +42,8 @@
             <tr>
                 <td class="text-center">{{ ++$i }}</td>
                 <td>{{ $note->judul }}</td>
-                <td>{!! $note->acara !!}</td>
-                <td>{!! $note->tanggal !!}</td>
+                <td>{{ $note->programs->acara }}</td>
+                <td>{{ $note->programs->tanggal }}</td>
                 <td class="text-center">
                     <form action="{{ route('notes.destroy',$note->id) }}" method="POST">
 

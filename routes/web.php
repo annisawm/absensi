@@ -29,6 +29,7 @@ Route::post('signaturepad', [SignaturePadController::class, 'upload'])->name('si
 Route::get('/guest/cetak', [GuestController::class, 'cetak']);
 Route::get('/program/cetak', [ProgramController::class, 'cetak']);
 Route::resource('/guest', GuestController::class);
+Route::get('/program/notes/{id}', [ProgramController::class, 'notes'])->name('program.notes');
 Route::resource('/program', ProgramController::class);
 Route::resource('/notes', NoteController::class);
 Route::resource('/opds', OpdController::class);
