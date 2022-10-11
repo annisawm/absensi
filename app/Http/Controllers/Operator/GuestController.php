@@ -68,7 +68,7 @@ class GuestController extends Controller
             'nip' => 'required',
             'nama' => 'required',
             'jenis_kelamin' => 'required',
-            'nama_instansi' => 'required',
+            'opd_kode' => 'required',
             'jabatan' => 'required',
             'no_hp' => 'required',
             'ttd' => 'required',

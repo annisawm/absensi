@@ -4,7 +4,7 @@
     <title>Tambah Data</title>
 @endsection
 @section('header')
-    <h1>Formulir Daftar Kegiatan</h1>
+    <h1>Formulir Daftar Kegiatan {{ auth()->user()->name }}</h1>
 @endsection
 @section('subheader')
     <li class="breadcrumb-item"><a href="#">Home</a></li>

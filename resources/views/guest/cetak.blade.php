@@ -16,7 +16,7 @@
             <td>{{$g->nip}}</td>
             <td>{{$g->nama}}</td>
             <td>{{$g->jenis_kelamin}}</td>
-            <td>{{$g->nama_instansi}}</td>
+            <td>{{$g->opd_kode}}</td>
             <td>{{$g->jabatan}}</td>
             <td>{{$g->no_hp}}</td>
             <td>{{$g->ttd}}</td>
