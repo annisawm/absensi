@@ -1,8 +1,5 @@
 @extends('template_tinymce')
 {{--@extends('layouts.master')--}}
-@section('title')
-    <title> Notulensi </title>
-@endsection
 @section('header')
     <h1>Notulensi Kegiatan</h1>
 @endsection
