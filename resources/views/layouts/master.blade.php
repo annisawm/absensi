@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/44ac444ad1.js" crossorigin="anonymous"></script>
     @yield('title')
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -41,28 +42,6 @@
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-            <!-- Navbar Search -->
-            <li class="nav-item">
-                <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                    <i class="fas fa-search"></i>
-                </a>
-                <div class="navbar-search-block">
-                    <form class="form-inline">
-                        <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                   aria-label="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-navbar" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </li>
             <!-- Notifications Dropdown Menu -->
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
@@ -147,15 +126,15 @@
            with font-awesome or any other icon font library -->
                     <li class="nav-item">
                         <a href="home" class="nav-link">
-                            <i class="nav-icon fas fa-columns"></i>
-                            <p>Home</p>
+                            <i class="fa-solid fa-house"></i>
+                            &nbsp Home
                         </a>
                     </li>
                     @canany(['superAdmin','admin'])
                     <li class="nav-item">
                         <a href="../guest" class="nav-link active">
-                            <i class="nav-icon fas fa-edit"></i>
-                            <p>Form Daftar Hadir</p>
+                            <i class="fa-solid fa-user-group"></i>
+                            &nbsp Form Daftar Hadir
                         </a>
                     </li>
                     @endcanany
@@ -163,8 +142,8 @@
                     @can('admin')
                     <li class="nav-item">
                         <a href="../program" class="nav-link active">
-                            <i class="nav-icon fas fa-edit"></i>
-                            <p>Form Daftar Kegiatan</p>
+                            <i class="fa-solid fa-list"></i>
+                            &nbsp Form Daftar Kegiatan
                         </a>
                     </li>
                     @endcan

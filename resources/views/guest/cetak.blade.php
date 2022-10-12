@@ -6,7 +6,7 @@
         <th>NIP</th>
         <th>Nama</th>
         <th>Jenis Kelamin</th>
-        <th>Nama Instansi</th>
+        <th>Nama Instansi(OPD)</th>
         <th>Jabatan</th>
         <th>No. Hp</th>
         <th>TTD</th>

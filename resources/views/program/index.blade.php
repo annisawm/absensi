@@ -37,15 +37,12 @@
                                     <td>{!! $program->waktu !!}</td>
                                     <td>{!! $program->tempat !!}</td>
                                     <td class="text-center">
-                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                              action="{{ route('program.destroy', $program->id) }}" method="POST">
-                                            <a href="{{ route('program.show', $program->id) }}"
-                                               class="btn btn-info">VIEW</a>
-                                            <a href="{{ route('program.edit', $program->id) }}"
-                                               class="btn btn-primary">EDIT</a>
+                                        <form method="POST">
+                                            <a href="{{ route('program.show', $program->id) }}"><i class="fa-solid fa-eye"></i></a>   &nbsp | &nbsp
+                                            <a href="{{ route('program.edit', $program->id) }}"><i class="fa-solid fa-pen-to-square"></i></i></a>  &nbsp | &nbsp
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">HAPUS</button>
+                                            <a href="{{ route('program.destroy', $program->id) }}"><i class="fa-solid fa-trash"></i></a>  &nbsp
                                         </form>
                                     </td>
                                 </tr>

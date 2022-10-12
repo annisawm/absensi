@@ -56,8 +56,9 @@
                 </div>
                 <br>
             </div>
+            &nbsp &nbsp
             <a class="btn btn-primary" href="../guest"> Create Link</a>
-            &nbsp &nbsp &nbsp
+            &nbsp
             <a class="btn btn-primary" href="{{route('program.notes',$program->id)}}"> Notulensi</a>
         </div>
     </div>
@@ -74,7 +75,7 @@
                         <th scope="col">NIP</th>
                         <th scope="col">NAMA</th>
                         <th scope="col">JENIS KELAMIN(L/P)</th>
-                        <th scope="col">NAMA INSTANSI</th>
+                        <th scope="col">NAMA INSTANSI(OPD)</th>
                         <th scope="col">JABATAN</th>
                         <th scope="col">NO.HP</th>
                         <th scope="col">TTD</th>
@@ -117,8 +118,8 @@
                         name: 'jenis_kelamin'
                     },
                     {
-                        data: 'nama_instansi',
-                        name: 'nama_instansi'
+                        data: 'opds.singkatan',
+                        name: 'opds.singkatan'
                     },
                     {
                         data: 'jabatan',
