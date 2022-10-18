@@ -9,7 +9,7 @@
         rel="stylesheet">
 @endpush
 @section('header')
-    <h1>Notulensi Kegiatan</h1>
+    <h1>Detail Notulensi Kegiatan</h1>
 @endsection
 @section('subheader')
     <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -19,9 +19,6 @@
 @section('content')
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">
-            <div class="float-left">
-                <h2> Show</h2>
-            </div>
             <div class="float-right">
                 <a class="btn btn-secondary" href="{{ route('notes.index') }}"> Back</a>
             </div>
@@ -35,11 +32,75 @@
                 {{ $note->judul }}
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Notulensi:</strong>
-                {!! $note->notulensi !!}
+
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h4> Pimpinan Sidang/Rapat </h4>
             </div>
         </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Ketua:</strong>
+                {{ $note->ketua }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Sekretaris:</strong>
+                {{ $note->sekretaris }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Pencatat:</strong>
+                {{ $note->pencatat }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Peserta Sidang/Rapat:</strong>
+                {{ $note->peserta }}
+            </div>
+        </div>
+
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h4> Kegiatan Sidang/Rapat </h4>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Isi Kegiatan Rapat:</strong>
+                {{ $note->isi }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>1. Kata Pembukaan:</strong>
+                {{ $note->pembuka }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>2. Pembahasan:</strong>
+                {{ $note->pembahasan }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>3. Keputusan:</strong>
+                {{ $note->keputusan }}
+            </div>
+        </div>
+
+    </div>
     </div>
 @endsection

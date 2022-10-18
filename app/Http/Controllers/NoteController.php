@@ -23,7 +23,14 @@ class NoteController extends Controller
     {
         $request->validate([
             'judul' => 'required',
-            'notulensi' => 'required',
+            'ketua' => 'required',
+            'sekretaris' => 'required',
+            'pencatat' => 'required',
+            'peserta' => 'required',
+            'isi' => 'required',
+            'pembuka' => 'required',
+            'pembahasan' => 'required',
+            'keputusan' => 'required',
         ]);
 
         Note::create($request->all());
@@ -45,7 +52,14 @@ class NoteController extends Controller
     {
         $request->validate([
             'judul' => 'required',
-            'notulensi' => 'required',
+            'ketua' => 'required',
+            'sekretaris' => 'required',
+            'pencatat' => 'required',
+            'peserta' => 'required',
+            'isi' => 'required',
+            'pembuka' => 'required',
+            'pembahasan' => 'required',
+            'keputusan' => 'required',
         ]);
 
         $note->update($request->all());

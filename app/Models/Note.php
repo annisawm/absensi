@@ -10,12 +10,17 @@ class Note extends Model
     use HasFactory;
 
     protected $fillable = [
-        'judul', 'notulensi', 'program_id',
+        'judul', 'ketua', 'sekretaris', 'pencatat','peserta', 'isi',
+        'pembuka', 'pembahasan', 'keputusan', 'program_id',
     ];
 
     protected $with = ['programs'];
 
+
     public function programs(){
         return $this->belongsTo(Program::class, 'program_id', 'id');
     }
+
+
+
 }

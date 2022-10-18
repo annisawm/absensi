@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Guest;
 use App\Models\Program;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 use Barryvdh\DomPDF\Facade as PDF;
 
 class ProgramController extends Controller

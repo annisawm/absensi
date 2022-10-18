@@ -53,7 +53,6 @@
                             @endforelse
                             </tbody>
                         </table>
-                        {{ $programs->links() }}
                     </div>
                 </div>
             </div>

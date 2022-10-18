@@ -56,6 +56,7 @@ class GuestController extends Controller
         }
     }
 
+
     public function edit(guest $guest)
     {
         return view('guest.edit', compact('guest'));

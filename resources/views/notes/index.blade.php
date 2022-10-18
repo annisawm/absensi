@@ -1,7 +1,4 @@
 @extends('layouts.master')
-@section('title')
-    <title> Notulensi </title>
-@endsection
 @section('header')
     <h1>Notulensi Kegiatan</h1>
 @endsection
@@ -16,13 +13,6 @@
     <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 @endpush
 @section('content')
-    <div class="row mt-5 mb-5">
-        <div class="col-lg-12 margin-tb">
-            <div class="float-left">
-                <h2>Notulensi</h2>
-            </div>
-        </div>
-    </div>
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">

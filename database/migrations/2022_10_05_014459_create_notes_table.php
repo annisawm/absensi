@@ -16,7 +16,14 @@ class CreateNotesTable extends Migration
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->text('notulensi');
+            $table->string('ketua');
+            $table->string('sekretaris');
+            $table->string('pencatat');
+            $table->text('peserta');
+            $table->text('isi');
+            $table->text('pembuka');
+            $table->text('pembahasan');
+            $table->text('keputusan');
             $table->unsignedBigInteger('program_id');
             $table->foreign('program_id')->references('id')->on('programs');
             $table->timestamps();
