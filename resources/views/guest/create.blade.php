@@ -1,6 +1,9 @@
 @extends('layouts.master')
 @section('title')
     <title> Tambah Data </title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
 @endsection
 @section('header')
     <h1>Formulir Daftar Hadir</h1>
@@ -94,10 +97,10 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">NAMA INSTANSI</label>
+                                <label for="opd_kode">NAMA INSTANSI</label>
                                 <br>
-                                <select name="opd_kode" id="opd_kode">
-                                    <option value="0">Pilih</option>
+                                <select name="opd_kode" id="opd_kode" class="form-control">
+                                    <option value="0">Pilih Instansi</option>
                                     @foreach($opd as $skpd)
                                     <option value="{{$skpd->kode}}">{{$skpd->nama_opd}}</option>
                                     @endforeach
@@ -108,6 +111,7 @@
                                 </div>
                                 @enderror
                             </div>
+
 
                             <div class="form-group">
                                 <label class="font-weight-bold">JABATAN</label>
@@ -187,6 +191,15 @@
             id == 1 ? $('#nip').prop("disabled", false) : $('#nip').prop("disabled", true);
         });
     </script>
+
+    <script src="/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#opd_kode').select2();
+        });
+    </script>
+
 @endpush
 
 

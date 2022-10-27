@@ -16,7 +16,13 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <a href="{{ route('program.create') }}" class="btn btn-md btn-success mb-3">TAMBAH</a>
+                        <a href="{{ route('program.create') }}" class="btn btn-md btn-success mb-3">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-user-plus"></i>
+                            </span>
+                            <span class="text">Tambah Data</span>
+                        </a>
+{{--                        <a href="{{ route('program.create') }}" class="btn btn-md btn-success mb-3">TAMBAH</a>--}}
                         <table class="table table-bordered">
                             <thead>
                             <tr>
@@ -37,12 +43,12 @@
                                     <td>{!! $program->waktu !!}</td>
                                     <td>{!! $program->tempat !!}</td>
                                     <td class="text-center">
-                                        <form method="POST">
-                                            <a href="{{ route('program.show', $program->id) }}"><i class="fa-solid fa-eye"></i></a>   &nbsp | &nbsp
-                                            <a href="{{ route('program.edit', $program->id) }}"><i class="fa-solid fa-pen-to-square"></i></i></a>  &nbsp | &nbsp
+                                        <a href="/program/{{$program->id }}" class="btn btn-info btn-sm"><i class="far fa-eye"></i> Detail</a>
+                                        <a href="/program/{{$program->id}}/edit" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i> Update</a>
+                                        <form action="/program/{{$program->id }}" method="POST" class="d-inline">
+                                            @method('delete')
                                             @csrf
-                                            @method('DELETE')
-                                            <a href="{{ route('program.destroy', $program->id) }}"><i class="fa-solid fa-trash"></i></a>  &nbsp
+                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>
                                         </form>
                                     </td>
                                 </tr>
