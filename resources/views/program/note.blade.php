@@ -95,7 +95,8 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <strong>Ketua:</strong>
-                                            <input type="text" name="ketua" class="form-control" placeholder="Ketua Rapat">
+                                            <input type="text" name="ketua" class="form-control"
+                                                   placeholder="Ketua Rapat">
                                             <input type="hidden" value="{{$program->id}}" name="program_id">
                                         </div>
                                     </div>
@@ -104,7 +105,8 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <strong>Sekretaris:</strong>
-                                            <input type="text" name="sekretaris" class="form-control" placeholder="Sekretaris Rapat">
+                                            <input type="text" name="sekretaris" class="form-control"
+                                                   placeholder="Sekretaris Rapat">
                                             <input type="hidden" value="{{$program->id}}" name="program_id">
                                         </div>
                                     </div>
@@ -113,7 +115,8 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <strong>Pencatat:</strong>
-                                            <input type="text" name="pencatat" class="form-control" placeholder="Pencatat">
+                                            <input type="text" name="pencatat" class="form-control"
+                                                   placeholder="Pencatat">
                                             <input type="hidden" value="{{$program->id}}" name="program_id">
                                         </div>
                                     </div>
@@ -122,7 +125,8 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="form-group">
                                             <strong>Peserta Sidang/Rapat:</strong>
-                                            <textarea id="mytextarea" class="form-control" style="height:150px" name="peserta" placeholder="Peserta Rapat"></textarea>
+                                            <textarea id="mytextarea" class="form-control" style="height:150px"
+                                                      name="peserta" placeholder="Peserta Rapat"></textarea>
                                         </div>
                                     </div>
                                 </div>

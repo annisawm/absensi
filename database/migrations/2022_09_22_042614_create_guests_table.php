@@ -18,7 +18,7 @@ class CreateGuestsTable extends Migration
             $table->string('nip');
             $table->string('nama');
             $table->string('jenis_kelamin');
-            $table->string('nama_instansi');
+            $table->string('opd_kode');
             $table->string('jabatan');
             $table->string('no_hp');
             $table->string('ttd');

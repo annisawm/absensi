@@ -41,7 +41,7 @@ class GuestController extends Controller
             'nip' => 'nullable|numeric|digits: 18',
             'nama' => 'required',
             'jenis_kelamin' => 'required',
-            'nama_instansi' => 'required',
+            'opd_kode' => 'required',
             'jabatan' => 'required',
             'no_hp' => 'required|numeric',
             'ttd' => 'required',
