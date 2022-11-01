@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Operator;
 use App\Http\Controllers\Controller;
 use App\Models\Guest;
 use App\Models\Opd;
+use App\Models\Signature;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\DataTables;
 use Barryvdh\DomPDF\Facade as PDF;
 
@@ -16,6 +18,10 @@ class GuestController extends Controller
     {
         if (request()->ajax()) {
             return DataTables::of(Guest::query())
+                ->addColumn('signed', function ($data) {
+                    return '<img class="img-size-64 img-bordered-lg" src="' . route('signed.file', $data->id) . '" alt="user image">';
+                })
+                ->rawColumns(['signed'])
                 ->make(true);
         }
         return view('guest.index');
@@ -25,8 +31,8 @@ class GuestController extends Controller
     {
         $guest = guest::all();
 
-    	$pdf = PDF\Pdf::loadview('guest.cetak',['guest'=>$guest]);
-    	return $pdf->stream();
+        $pdf = PDF\Pdf::loadview('guest.cetak', ['guest' => $guest]);
+        return $pdf->stream();
     }
 
     public function create()
@@ -44,16 +50,42 @@ class GuestController extends Controller
             'opd_kode' => 'required',
             'jabatan' => 'required',
             'no_hp' => 'required|numeric',
-            'ttd' => 'required',
+//            'signature' => 'required',
         ]);
 
-        $guest = guest::create($request->all());
 
+        $image_parts = explode(";base64,", $request->signed);
+
+        $image_type_aux = explode("image/", $image_parts[0]);
+
+        $image_type = $image_type_aux[1];
+
+        $image_base64 = base64_decode($image_parts[1]);
+
+        $signature = uniqid() . '.' . $image_type;
+
+        Storage::put('signed/' . $signature, $image_base64);
+
+        $data = $request->all();
+        $data['signed'] = 'signed/' . $signature;
+        $guest = guest::create($data);
         if ($guest) {
             return redirect()->route('guest.index')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
             return redirect()->route('guest.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
+    }
+
+    public function file($id)
+    {
+        $poster = Guest::find($id);
+        $file = storage_path('app/' . $poster->signed);
+        return response()
+            ->file($file, [
+                'Cache-Control' => 'no-cache, no-store, must-revalidate',
+                'Pragma' => 'no-cache',
+                'Expires' => '0'
+            ]);
     }
 
 
@@ -72,7 +104,7 @@ class GuestController extends Controller
             'opd_kode' => 'required',
             'jabatan' => 'required',
             'no_hp' => 'required',
-            'ttd' => 'required',
+//            'signature' => 'required',
         ]);
 
 

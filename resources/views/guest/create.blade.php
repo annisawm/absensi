@@ -102,7 +102,7 @@
                                 <select name="opd_kode" id="opd_kode" class="form-control">
                                     <option value="0">Pilih Instansi</option>
                                     @foreach($opd as $skpd)
-                                    <option value="{{$skpd->kode}}">{{$skpd->nama_opd}}</option>
+                                        <option value="{{$skpd->kode}}">{{$skpd->nama_opd}}</option>
                                     @endforeach
                                 </select>
                                 @error('opd_kode')
@@ -139,30 +139,42 @@
                                 @enderror
                             </div>
 
-{{--                            <div class="form-group">--}}
-{{--                                <label class="font-weight-bold">Signature:</label>--}}
-{{--                                <br/>--}}
-{{--                                <div id="sig"></div>--}}
-{{--                                <br/>--}}
-{{--                                <button id="clear" class="btn btn-danger btn-sm">Clear Signature</button>--}}
-{{--                                <textarea id="signature64" name="signed" style="display: none"></textarea>--}}
-{{--                            </div>--}}
 
-{{--                            <div class="form-group">--}}
-{{--                                <a href="../signaturepad" class="btn btn-md btn-success mb-3" target="_blank">TTD</a>--}}
-{{--                            </div>--}}
+                            {{--                            <div class="form-group">--}}
+                            {{--                                <label class="font-weight-bold">TTD</label>--}}
+                            {{--                                <input type="text" class="form-control @error('ttd') is-invalid @enderror"--}}
+                            {{--                                       name="ttd" value="{{ old('ttd') }}" placeholder="Masukkan TTD">--}}
+
+                            {{--                                <!-- error message untuk title -->--}}
+                            {{--                                @error('ttd')--}}
+                            {{--                                <div class="alert alert-danger mt-2">--}}
+                            {{--                                    {{ $message }}--}}
+                            {{--                                </div>--}}
+                            {{--                                @enderror--}}
+                            {{--                            </div>--}}
+
+
+
+                            {{--                            <div class="form-group">--}}
+                            {{--                                <label class="" for="">TTD</label>--}}
+                            {{--                                <form method="POST" action="{{ url('signature-pad') }}">--}}
+                            {{--                                    <div id="signature-pad" class="m-signature-pad">--}}
+                            {{--                                        <div class="m-signature-pad--body">--}}
+                            {{--                                            <canvas style="border: 2px dashed #ccc"></canvas>--}}
+                            {{--                                        </div>--}}
+                            {{--                                    </div>--}}
+                            {{--                                </form>--}}
+                            {{--                            </div>--}}
 
                             <div class="form-group">
-                                <label class="font-weight-bold">TTD</label>
-                                <input type="text" class="form-control @error('ttd') is-invalid @enderror"
-                                       name="ttd" value="{{ old('ttd') }}" placeholder="Masukkan TTD">
-
-                                <!-- error message untuk title -->
-                                @error('ttd')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
+                                <label class="" for="">TTD</label>
+                                @csrf
+                                <div class="col-md-3">
+                                    <div id="signature-pad"></div>
+                                    <br/>
+                                    <button id="clear" class="btn btn-danger btn-sm">Reset</button>
+                                    <textarea id="signature64" name="signed" style="display: none"></textarea>
                                 </div>
-                                @enderror
                             </div>
 
                             <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
@@ -176,6 +188,11 @@
 @endsection
 
 @push('js')
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js"></script>
     <script>
         $("#status").change(function () {
             var id = $(this).val();
@@ -195,11 +212,20 @@
     <script src="/js/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('#opd_kode').select2();
         });
     </script>
 
+
+    <script type="text/javascript">
+        var sig = $('#signature-pad').signature({syncField: '#signature64', syncFormat: 'PNG'});
+        $('#clear').click(function (e) {
+            e.preventDefault();
+            sig.signature('clear');
+            $("#signature64").val('');
+        });
+    </script>
 @endpush
 
 

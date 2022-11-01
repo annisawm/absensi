@@ -4,7 +4,7 @@ use App\Http\Controllers\Operator\GuestController;
 use App\Http\Controllers\Operator\ProgramController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\OpdController;
-use App\Http\Controllers\SignaturePadController;
+use App\Http\Controllers\SignatureController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,10 +23,18 @@ Route::get('/', function () {
 });
 
 
-Route::get('signaturepad', [SignaturePadController::class, 'index']);
-Route::post('signaturepad', [SignaturePadController::class, 'upload'])->name('signaturepad.upload');
+//Route::get('signaturepad', [SignaturePadController::class, 'index']);
+//Route::post('signaturepad', [SignaturePadController::class, 'upload'])->name('signaturepad.upload');
+
+
+Route::get('signature-pad',[SignatureController::class, 'index']);
+Route::post('signature-pad',[SignatureController::class, 'store']);
+
+//Route::get('signature-pad', [SignatureController::class, 'index']);
+//Route::post('signature-pad', [SignatureController::class, 'store']);
 
 Route::get('/guest/cetak', [GuestController::class, 'cetak']);
+Route::get('/guest/signed/{id}', [GuestController::class, 'file'])->name('signed.file');
 Route::get('/program/cetak', [ProgramController::class, 'cetak']);
 Route::resource('/guest', GuestController::class);
 Route::get('/program/notes/{id}', [ProgramController::class, 'notes'])->name('program.notes');

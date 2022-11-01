@@ -1,22 +1,19 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>KOMINFO</title>
-    <link rel="stylesheet" type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
+    <title>KOMINFO </title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
+
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css"
-          rel="stylesheet">
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js"></script>
+
     <link rel="stylesheet" type="text/css" href="http://keith-wood.name/css/jquery.signature.css">
 
     <style>
-        .kbw-signature {
-            width: 100%;
-            height: 200px;
-        }
-
-        #sig canvas {
+        .kbw-signature { width: 100%; height: 200px;}
+        #sig canvas{
             width: 100% !important;
             height: auto;
         }
@@ -29,7 +26,7 @@
         <div class="col-md-6 offset-md-3 mt-5">
             <div class="card">
                 <div class="card-header">
-                    <h5>Tanda Tangan Peserta Rapat </h5>
+                    <h5>TTD Peserta </h5>
                 </div>
                 <div class="card-body">
                     @if ($message = Session::get('success'))
@@ -38,14 +35,14 @@
                             <strong>{{ $message }}</strong>
                         </div>
                     @endif
-                    <form method="POST" action="{{ route('signaturepad.upload') }}">
+                    <form method="POST" action="{{ url('signature-pad') }}">
                         @csrf
                         <div class="col-md-12">
-                            <label class="" for="">Signature:</label>
+                            <label class="" for="">TTD:</label>
                             <br/>
-                            <div id="sig"></div>
+                            <div id="signaturePad" ></div>
                             <br/>
-                            <button id="clear" class="btn btn-danger btn-sm">Clear Signature</button>
+                            <button id="clear" class="btn btn-danger btn-sm">Reset</button>
                             <textarea id="signature64" name="signed" style="display: none"></textarea>
                         </div>
                         <br/>
@@ -56,10 +53,9 @@
         </div>
     </div>
 </div>
-
 <script type="text/javascript">
-    var sig = $('#sig').signature({syncField: '#signature64', syncFormat: 'PNG'});
-    $('#clear').click(function (e) {
+    var sig = $('#signaturePad').signature({syncField: '#signature64', syncFormat: 'PNG'});
+    $('#clear').click(function(e) {
         e.preventDefault();
         sig.signature('clear');
         $("#signature64").val('');
