@@ -172,7 +172,7 @@
                                 <div class="col-md-3">
                                     <div id="signature-pad"></div>
                                     <br/>
-                                    <button id="clear" class="btn btn-danger btn-sm">Reset</button>
+                                    <button id="clear" class="btn btn-danger btn-sm">Hapus</button>
                                     <textarea id="signature64" name="signed" style="display: none"></textarea>
                                 </div>
                             </div>

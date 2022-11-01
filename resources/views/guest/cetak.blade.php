@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
-<h3><center>Laporan Daftar Hadir</center></h3>
+<h3>
+    <center>Laporan Daftar Hadir</center>
+</h3>
 <style>
-    .signed{
+    .signed {
         width: 100%;
     }
 </style>
@@ -16,16 +18,17 @@
         <th>No. Hp</th>
         <th>TTD</th>
     </tr>
-    @foreach($guest as $g)
+    @foreach ($guest as $g)
         <tr>
-            <td>{{$g->nip}}</td>
-            <td>{{$g->nama}}</td>
-            <td>{{$g->jenis_kelamin}}</td>
-            <td>{{$g->opds->nama_opd}}</td>
-            <td>{{$g->jabatan}}</td>
-            <td>{{$g->no_hp}}</td>
-            <td><img class="signed" src="{{storage_path('app/' . $g->signed)}}" alt="user image"></td>
+            <td>{{ $g->nip }}</td>
+            <td>{{ $g->nama }}</td>
+            <td>{{ $g->jenis_kelamin }}</td>
+            <td>{{ $g->opds->nama_opd }}</td>
+            <td>{{ $g->jabatan }}</td>
+            <td>{{ $g->no_hp }}</td>
+            <td><img class="signed" src="{{ storage_path('app/' . $g->signed) }}" alt="user image"></td>
         </tr>
     @endforeach
 </table>
+
 </html>
