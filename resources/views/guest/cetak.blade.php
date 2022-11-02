@@ -5,10 +5,10 @@
 </h3>
 <style>
     .signed {
-        width: 100%;
+        width: 30%;
     }
 </style>
-<table border="1" cellspacing="0" cellpadding="5">
+<table border="1" cellspacing="0" cellpadding="5" align="center">
     <tr>
         <th>NIP</th>
         <th>Nama</th>
@@ -26,7 +26,7 @@
             <td>{{ $g->opds->nama_opd }}</td>
             <td>{{ $g->jabatan }}</td>
             <td>{{ $g->no_hp }}</td>
-            <td><img class="signed" src="{{ storage_path('app/' . $g->signed) }}" alt="user image"></td>
+            <td align="center"><img class="signed" src="{{ storage_path('app/' . $g->signed) }}" alt="user image"></td>
         </tr>
     @endforeach
 </table>
