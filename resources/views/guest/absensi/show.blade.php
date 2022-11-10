@@ -15,11 +15,45 @@
 @section('content')
     <div class="container mt-5 mb-5">
         <div class="row">
-            @if(session('success'))
-                <div class="alert alert-success mt-2">
-                    {{ session('success') }}
+            <div class="col-lg-12 margin-tb">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Acara: </strong>
+                    {!! $program->acara !!}
                 </div>
-            @endif
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Tanggal Kegiatan: </strong>
+                    {!! $program->tanggal !!}
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Waktu Kegiatan: </strong>
+                    {!! $program->waktu !!}
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Tempat: </strong>
+                    {!! $program->tempat !!}
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5 mb-5">
+        <div class="row">
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
@@ -32,7 +66,8 @@
                                 </ul>
                             </div>
                         @endif
-                        <form action="{{ route('guest.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('absensi.store') }}" method="POST" enctype="multipart/form-data">
+
 
                             @csrf
 
@@ -56,6 +91,7 @@
                                 <input type="text" id="nip" disabled
                                        class="form-control @error('nip') is-invalid @enderror" name="nip"
                                        value="{{ old('nip') }}" placeholder="Masukkan NIP">
+                                <input type="hidden" value="{{$program->id}}" name="program_id">
 
                                 <!-- error message untuk title -->
                                 @error('nip')

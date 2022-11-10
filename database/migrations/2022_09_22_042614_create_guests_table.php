@@ -22,6 +22,8 @@ class CreateGuestsTable extends Migration
             $table->string('jabatan');
             $table->string('no_hp');
             $table->string('ttd');
+            $table->unsignedBigInteger('program_id');
+            $table->foreign('program_id')->references('id')->on('programs');
             $table->timestamps();
         });
     }

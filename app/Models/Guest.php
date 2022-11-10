@@ -10,7 +10,7 @@ class Guest extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nip', 'nama', 'jenis_kelamin', 'opd_kode', 'jabatan', 'no_hp', 'signed'
+        'program_id', 'nip','nama', 'jenis_kelamin', 'opd_kode', 'jabatan', 'no_hp', 'signed'
     ];
 
     // protected $appends = [
@@ -32,9 +32,14 @@ class Guest extends Model
     //     return ucfirst($jk);
     // }
 
-    protected $with = ['opds'];
+    protected $with = ['opds', 'programs'];
 
     public function opds(){
         return $this->belongsTo(Opd::class,'opd_kode','kode');
     }
+
+    public function programs(){
+        return $this->belongsTo(Program::class, 'program_id', 'id');
+    }
+
 }

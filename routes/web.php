@@ -40,8 +40,12 @@ Route::resource('/guest', GuestController::class);
 Route::get('/program/notes/{id}', [ProgramController::class, 'notes'])->name('program.notes');
 Route::resource('/program', ProgramController::class);
 Route::resource('/notes', NoteController::class);
-Route::resource('/opds', OpdController::class);
+//Route::resource('/opds', OpdController::class);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// baru
+Route::resource('/absensi', App\Http\Controllers\Guest\AbsensiController::class );
+

@@ -21,6 +21,12 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
+                        @if(session('success'))
+                            <div class="alert alert-success mt-2">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+
                         <a href="{{ route('guest.create') }}" class="btn btn-md btn-success mb-3">
                             <span class="icon text-white-50">
                                 <i class="fas fa-user-plus"></i>

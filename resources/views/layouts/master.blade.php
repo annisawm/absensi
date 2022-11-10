@@ -101,7 +101,9 @@
                     <img src="../../dist/img/user.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
+                    @auth
                     <a href="#" class="d-block">{{ auth()->user()->name }}</a>
+                    @endauth
                 </div>
             </div>
 
