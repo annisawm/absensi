@@ -32,6 +32,7 @@ class GuestController extends Controller
         $guest = guest::all();
 
         $pdf = PDF\Pdf::loadview('guest.cetak', ['guest' => $guest]);
+        $pdf->setPaper('A4', 'landscape');
         return $pdf->stream();
     }
 
