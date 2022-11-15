@@ -64,7 +64,7 @@
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
-                                        <strong>Sekretaris:</strong>
+                                        <strong>Ketua:</strong>
                                         <input type="text" name="ketua" value="{{ $note->ketua }}" class="form-control"
                                                placeholder="Ketua Rapat">
                                     </div>

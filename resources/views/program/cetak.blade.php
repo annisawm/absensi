@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <h3><center>Laporan Daftar Hadir</center></h3>
-<table border="1" cellspacing="0" cellpadding="5">
+<table border="1" cellspacing="0" cellpadding="5" align="center">
     <tr>
         <th>Acara</th>
         <th>Tanggal Kegiatan</th>

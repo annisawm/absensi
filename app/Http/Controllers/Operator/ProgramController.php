@@ -23,7 +23,9 @@ class ProgramController extends Controller
     {
         $program = program::all();
 
+
         $pdf = PDF\Pdf::loadview('program.cetak',['program'=>$program]);
+        $pdf->setPaper('A4', 'landscape');
         return $pdf->stream();
     }
 

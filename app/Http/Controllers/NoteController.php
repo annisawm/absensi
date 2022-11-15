@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Note;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class NoteController extends Controller
 {
@@ -13,6 +14,15 @@ class NoteController extends Controller
         return view('notes.index', compact('notes'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    public function cetak()
+    {
+        $notes = Note::all();
+
+        $pdf = PDF\Pdf::loadview('notes.cetak', ['notes' => $notes]);
+        return $pdf->stream();
+    }
+
 
     public function create()
     {

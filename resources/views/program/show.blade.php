@@ -57,7 +57,7 @@
                 <br>
             </div>
             &nbsp &nbsp
-            <a class="btn btn-primary" href="../guest"> Create Link</a>
+{{--            <a class="btn btn-primary" href="../guest"> Create Link</a>--}}
             &nbsp
             <a class="btn btn-primary" href="{{route('program.notes',$program->id)}}"> Notulensi</a>
         </div>
@@ -130,8 +130,8 @@
                         name: 'no_hp'
                     },
                     {
-                        data: 'ttd',
-                        name: 'ttd'
+                        data: 'signed',
+                        name: 'signed'
                     },
                 ],
             });
