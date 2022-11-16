@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Guest;
 use App\Models\Program;
 use Illuminate\Http\Request;
-use Yajra\DataTables\DataTables;
 use Barryvdh\DomPDF\Facade as PDF;
 
 class ProgramController extends Controller
@@ -19,10 +18,11 @@ class ProgramController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);;
     }
 
-    public function cetak($id)
+    public function cetak(program $id)
     {
-        $program = program::GroupBy($id);
-        $pdf = PDF\Pdf::loadview('program.cetak',['program'=>$program]);
+        $program = program::find($id);
+        $guest = Guest::where('program_id', $id->id)->get();
+        $pdf = PDF\Pdf::loadview('program.cetak',['program'=>$program,'guest'=>$guest]);
         $pdf->setPaper('A4', 'landscape');
         return $pdf->stream();
     }
