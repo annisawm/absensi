@@ -16,21 +16,12 @@ class GuestController extends Controller
 {
     public function index()
     {
-        if (request()->ajax()) {
-            return DataTables::of(Guest::query())
-                ->addColumn('signed', function ($data) {
-                    return '<img class="img-size-64 img-bordered-lg" src="' . route('signed.file', $data->id) . '" alt="user image">';
-                })
-                ->rawColumns(['signed'])
-                ->make(true);
-        }
         return view('guest.index');
     }
 
     public function cetak()
     {
         $guest = guest::all();
-
         $pdf = PDF\Pdf::loadview('guest.cetak', ['guest' => $guest]);
         $pdf->setPaper('A4', 'landscape');
         return $pdf->stream();
@@ -89,6 +80,14 @@ class GuestController extends Controller
             ]);
     }
 
+    public function tabel($id){
+        return DataTables::of(Guest::where('program_id', $id))
+            ->addColumn('signed', function ($data) {
+                return '<img class="img-size-64 img-bordered-lg" src="' . route('signed.file', $data->id) . '" alt="user image">';
+            })
+            ->rawColumns(['signed'])
+            ->make(true);
+    }
 
     public function edit(guest $guest)
     {

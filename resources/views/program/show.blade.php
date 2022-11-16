@@ -22,7 +22,8 @@
                 </div>
                 <div class="pull-right">
                     <a class="btn btn-primary" href="{{ route('program.index') }}"> Back</a>
-{{--                    <a href="/program/cetak" class="btn btn-primary" target="_blank">Cetak Kegiatan PDF</a>--}}
+                    <a class="btn btn-primary" href="{{route('program.cetak',$program->id)}}">Cetak Daftar Hadir PDF</a>
+{{--                    <a href="/program/cetak" class="btn btn-primary" target="_blank">Cetak Daftar Hadir PDF</a>--}}
                 </div>
                 <br>
             </div>
@@ -57,7 +58,7 @@
                 <br>
             </div>
             &nbsp &nbsp
-{{--            <a class="btn btn-primary" href="../guest"> Create Link</a>--}}
+            <a class="btn btn-primary" href="../guest"> Create Link</a>
             &nbsp
             <a class="btn btn-primary" href="{{route('program.notes',$program->id)}}"> Notulensi</a>
         </div>
@@ -104,7 +105,7 @@
             var dt = $('#tabel_guest').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{{ route('guest.index') }}',
+                ajax: '{{ route('guest.tabel',  $program->id) }}',
                 columns: [{
                     data: 'nip',
                     name: 'nip'

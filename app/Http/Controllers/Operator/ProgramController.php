@@ -19,11 +19,9 @@ class ProgramController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);;
     }
 
-    public function cetak()
+    public function cetak($id)
     {
-        $program = program::all();
-
-
+        $program = program::GroupBy($id);
         $pdf = PDF\Pdf::loadview('program.cetak',['program'=>$program]);
         $pdf->setPaper('A4', 'landscape');
         return $pdf->stream();

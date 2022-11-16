@@ -1,36 +1,3 @@
-{{--<!DOCTYPE html>--}}
-{{--<html>--}}
-{{--<h3>--}}
-{{--    <center>Laporan Daftar Hadir</center>--}}
-{{--</h3>--}}
-{{--<table>--}}
-{{--    <tr>--}}
-{{--        <th>Judul</th>--}}
-{{--        <th>Ketua</th>--}}
-{{--        <th>Sekretaris</th>--}}
-{{--        <th>Pencatat</th>--}}
-{{--        <th>Peserta</th>--}}
-{{--        <th>Isi</th>--}}
-{{--        <th>Kata Pembukaan</th>--}}
-{{--        <th>Pembahasan</th>--}}
-{{--        <th>Keputusan</th>--}}
-{{--    </tr>--}}
-{{--    @foreach ($notes as $n)--}}
-{{--        <tr>--}}
-{{--            <td>{{ $n->judul}}</td>--}}
-{{--            <td>{{ $n->ketua }}</td>--}}
-{{--            <td>{{ $n->sekretaris }}</td>--}}
-{{--            <td>{{ $n->pencatat }}</td>--}}
-{{--            <td>{{ $n->peserta }}</td>--}}
-{{--            <td>{{ $n->isi }}</td>--}}
-{{--            <td>{{ $n->pembuka }}</td>--}}
-{{--            <td>{{ $n->pembahasan }}</td>--}}
-{{--            <td>{{ $n->keputusan }}</td>--}}
-{{--        </tr>--}}
-{{--    @endforeach--}}
-{{--</table>--}}
-{{--</html>--}}
-
     <!DOCTYPE html>
 <html>
 <head>

@@ -35,13 +35,12 @@ Route::post('signature-pad',[SignatureController::class, 'store']);
 
 Route::get('/guest/cetak', [GuestController::class, 'cetak']);
 Route::get('/guest/signed/{id}', [GuestController::class, 'file'])->name('signed.file');
-Route::get('/program/cetak', [ProgramController::class, 'cetak']);
-Route::get('/notes/cetak', [NoteController::class, 'cetak']);
+Route::get('/program/cetak/{id}', [ProgramController::class, 'cetak'])->name('program.cetak');
+Route::get('/guest/tabel/{id}', [GuestController::class, 'tabel'])->name('guest.tabel');
 Route::resource('/guest', GuestController::class);
 Route::get('/program/notes/{id}', [ProgramController::class, 'notes'])->name('program.notes');
 Route::resource('/program', ProgramController::class);
 Route::resource('/notes', NoteController::class);
-
 //Route::resource('/opds', OpdController::class);
 
 Auth::routes();
