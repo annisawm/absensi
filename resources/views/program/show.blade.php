@@ -22,8 +22,7 @@
                 </div>
                 <div class="pull-right">
                     <a class="btn btn-primary" href="{{ route('program.index') }}"> Back</a>
-                    <a class="btn btn-primary" href="{{route('program.cetak',$program->id)}}">Cetak Daftar Hadir PDF</a>
-{{--                    <a href="/program/cetak" class="btn btn-primary" target="_blank">Cetak Daftar Hadir PDF</a>--}}
+                    <a class="btn btn-primary" href="{{route('program.cetak',$program->id)}}">Export PDF</a>
                 </div>
                 <br>
             </div>
@@ -58,9 +57,13 @@
                 <br>
             </div>
             &nbsp &nbsp
-            <a class="btn btn-primary" href="../guest"> Create Link</a>
-            &nbsp
-            <a class="btn btn-primary" href="{{route('program.notes',$program->id)}}"> Notulensi</a>
+{{--            <a class="btn btn-primary" href="../guest"> Create Link</a>--}}
+
+            @if($program->notes->isEmpty())
+                <a class="btn btn-primary" href="{{route('program.notes',$program->id)}}">Buat Notulensi</a>
+            @else
+                <a class="btn btn-primary" href="{{route('notes.show',$program->id)}}">Notulensi</a>
+            @endif
         </div>
     </div>
 

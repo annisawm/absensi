@@ -26,7 +26,7 @@
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <th scope="col">NO</th>
+{{--                                <th scope="col">NO</th>--}}
                                 <th scope="col">ACARA/KEGIATAN</th>
                                 <th scope="col">TANGGAL KEGIATAN</th>
                                 <th scope="col">WAKTU KEGIATAN</th>
@@ -37,7 +37,7 @@
                             <tbody>
                             @forelse ($programs as $program)
                                 <tr>
-                                    <td>{!! ++$i !!}</td>
+{{--                                    <td>{!! ++$i !!}</td>--}}
                                     <td>{!! $program->acara !!}</td>
                                     <td>{!! $program->tanggal !!}</td>
                                     <td>{!! $program->waktu !!}</td>

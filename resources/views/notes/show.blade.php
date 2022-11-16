@@ -23,7 +23,12 @@
                 </div>
                 <div class="pull-right">
                     <a class="btn btn-primary" href="{{ route('notes.index') }}"> Back</a>
-                    <a href="/notes/cetak" class="btn btn-primary" target="_blank">Cetak</a>
+                    <a href="/notes/cetak" class="btn btn-primary">
+                            <span class="icon text-white-50">
+                                <i class="fa-solid fa-print"></i>
+                            </span>
+                        <span class="text">Export PDF</span>
+                    </a>
                 </div>
                 <br>
             </div>

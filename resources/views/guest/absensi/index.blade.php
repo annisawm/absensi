@@ -1,14 +1,9 @@
-@extends('layouts.master')
+@extends('layouts.guest')
 @section('title')
-    <title>Formulir Kegiatan</title>
-    <title>Tambah Data</title>
+    <title>Form Daftar Hadir</title>
 @endsection
 @section('header')
-    <h1>Formulir Daftar Kegiatan</h1>
-@endsection
-@section('subheader')
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active">Formulir Daftar Kegiatan</li>
+    <h1>Formulir Daftar Hadir Peserta</h1>
 @endsection
 @section('content')
     <div class="container mt-5">
@@ -21,8 +16,6 @@
                                 {{ session('success') }}
                             </div>
                         @endif
-
-                        {{--                        <a href="{{ route('program.create') }}" class="btn btn-md btn-success mb-3">TAMBAH</a>--}}
                         <table class="table table-bordered">
                             <thead>
                             <tr>
@@ -43,7 +36,7 @@
                                     <td>{!! $program->waktu !!}</td>
                                     <td>{!! $program->tempat !!}</td>
                                     <td class="text-center">
-                                        <a href="{{route('absensi.show',$program->id)}}" class="btn btn-info btn-sm"><i class="far fa-eye"></i>Daftar</a>
+                                        <a href="{{route('absensi.show',$program->id)}}" class="btn btn-info btn-sm"><i class="far fa-eye"></i>Daftar Hadir</a>
                                     </td>
                                 </tr>
                             @empty

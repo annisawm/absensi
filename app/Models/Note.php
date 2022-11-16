@@ -14,8 +14,6 @@ class Note extends Model
         'pembuka', 'pembahasan', 'keputusan', 'program_id',
     ];
 
-    protected $with = ['programs'];
-
 
     public function programs(){
         return $this->belongsTo(Program::class, 'program_id', 'id');

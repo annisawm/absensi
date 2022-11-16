@@ -50,8 +50,9 @@ class ProgramController extends Controller
         }
     }
 
-    public function show(program $program)
+    public function show($id)
     {
+        $program = Program::with('notes')->find($id);
         return view('program.show', compact('program'));
     }
 
@@ -60,6 +61,7 @@ class ProgramController extends Controller
         $program = Program::find($id);
         return view('program.note', compact('program'));
     }
+
 
     public function edit(program $program)
     {

@@ -18,10 +18,10 @@ class NoteController extends Controller
     public function cetak()
     {
         $notes = Note::all();
-
         $pdf = PDF\Pdf::loadview('notes.cetak', ['notes' => $notes]);
         return $pdf->stream();
     }
+
 
 
     public function create()

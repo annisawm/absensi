@@ -12,4 +12,10 @@ class Program extends Model
     protected $fillable = [
         'acara', 'tanggal', 'waktu', 'tempat',
     ];
+
+
+
+    public function notes(){
+        return $this->hasMany(Note::class,'program_id','id');
+    }
 }
