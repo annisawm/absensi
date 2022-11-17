@@ -62,7 +62,7 @@
             @if($program->notes->isEmpty())
                 <a class="btn btn-primary" href="{{route('program.notes',$program->id)}}">Buat Notulensi</a>
             @else
-                <a class="btn btn-primary" href="{{route('notes.show',$program->id)}}">Notulensi</a>
+                <a class="btn btn-primary" href="{{route('notes.index',$program->id)}}">Notulensi</a>
             @endif
         </div>
     </div>

@@ -41,13 +41,10 @@ class ProgramController extends Controller
             'tempat' => 'required',
         ]);
 
-        $program = program::create($request->all());
+        program::create($request->all());
+        return redirect()->route('program.index')
+            ->with('success', 'Data Program Berhasil Dibuat');
 
-        if ($program) {
-            return redirect()->route('program.index')->with(['success' => 'Data Kegiatan Berhasil Disimpan!']);
-        } else {
-            return redirect()->route('program.index')->with(['error' => 'Data Kegiatan Gagal Disimpan!']);
-        }
     }
 
     public function show($id)
@@ -78,29 +75,62 @@ class ProgramController extends Controller
             'tempat' => 'required',
         ]);
 
-
-        $program = program::findOrFail($program->id);
-
-        $program->update($request->all());
-
-        if ($program) {
-
-            return redirect()->route('program.index')->with(['success' => 'Data Kegiatan Berhasil Diupdate!']);
-        } else {
-
-            return redirect()->route('program.index')->with(['error' => 'Data Kegiatan Gagal Diupdate!']);
-        }
+        program::findOrFail($program->id);
+        return redirect()->route('program.index')
+            ->with('success', 'Data Program Berhasil Di Update');
     }
 
     public function destroy($id)
     {
         $program = program::findOrFail($id);
         $program->delete();
+        return redirect()->route('program.index')
+            ->with('success', 'Data Program Berhasil Di Hapus');
+    }
 
-        if ($program) {
-            return redirect()->route('program.index')->with(['success' => 'Data Kegiatan Berhasil Dihapus!']);
-        } else {
-            return redirect()->route('program.index')->with(['error' => 'Data Kegiatan Gagal Dihapus!']);
-        }
+    public function hapus($id)
+    {
+        $program = program::find($id);
+        $program->delete();
+
+        return redirect('/program');
+    }
+
+    public function trash()
+    {
+        $program = program::onlyTrashed()->get();
+        return view('/program/trash', ['program' => $program]);
+    }
+
+    public function kembalikan($id)
+    {
+        $program = program::onlyTrashed()->where('id',$id);
+        $program->restore();
+        return redirect('/program/trash');
+    }
+
+    public function kembalikan_semua()
+    {
+
+        $program = program::onlyTrashed();
+        $program->restore();
+
+        return redirect('/program/trash');
+    }
+
+    public function hapus_permanen($id)
+    {
+        $program = program::onlyTrashed()->where('id',$id);
+        $program->forceDelete();
+
+        return redirect('/program/trash');
+    }
+
+    public function hapus_permanen_semua()
+    {
+        $program = program::onlyTrashed();
+        $program->forceDelete();
+
+        return redirect('/program/trash');
     }
 }

@@ -38,6 +38,12 @@ Route::get('/guest/signed/{id}', [GuestController::class, 'file'])->name('signed
 Route::get('/program/cetak/{id}', [ProgramController::class, 'cetak'])->name('program.cetak');
 Route::get('/notes/cetak', [NoteController::class, 'cetak']);
 Route::get('/guest/tabel/{id}', [GuestController::class, 'tabel'])->name('guest.tabel');
+Route::get('/program/hapus/{id}', [ProgramController::class, 'hapus']);
+Route::get('/program/trash', [ProgramController::class, 'trash']);
+Route::get('/program/kembalikan/{id}',[ProgramController::class, 'kembalikan']);
+Route::get('/program/kembalikan_semua', [ProgramController::class, 'kembalikan_semua']);
+Route::get('/program/hapus_permanen/{id}', [ProgramController::class, 'hapus_permanen']);
+Route::get('/program/hapus_permanen_semua', [ProgramController::class, 'hapus_permanen_semua']);
 Route::resource('/guest', GuestController::class);
 Route::get('/program/notes/{id}', [ProgramController::class, 'notes'])->name('program.notes');
 Route::resource('/program', ProgramController::class);

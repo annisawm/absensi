@@ -4,13 +4,18 @@
     <title>Tambah Data</title>
 @endsection
 @section('header')
-    <h1>Formulir Daftar Kegiatan {{ auth()->user()->name }}</h1>
+    <h1>Formulir Daftar Kegiatan</h1>
 @endsection
 @section('subheader')
     <li class="breadcrumb-item"><a href="#">Home</a></li>
     <li class="breadcrumb-item active">Formulir Daftar Kegiatan</li>
 @endsection
 @section('content')
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
@@ -21,6 +26,12 @@
                                 <i class="fas fa-user-plus"></i>
                             </span>
                             <span class="text">Tambah Data</span>
+                        </a>
+                        <a href="/program/trash" class="btn btn-md btn-success mb-3">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-trash-alt"></i>
+                            </span>
+                            <span class="text">Trash</span>
                         </a>
 {{--                        <a href="{{ route('program.create') }}" class="btn btn-md btn-success mb-3">TAMBAH</a>--}}
                         <table class="table table-bordered">
@@ -48,7 +59,7 @@
                                         <form action="/program/{{$program->id }}" method="POST" class="d-inline">
                                             @method('delete')
                                             @csrf
-                                            <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i> Delete</button>
                                         </form>
                                     </td>
                                 </tr>
