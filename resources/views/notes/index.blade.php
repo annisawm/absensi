@@ -37,14 +37,14 @@
                 <td class="text-center">
                     <form action="{{ route('notes.destroy',$note->id) }}" method="POST">
 
-                        <a href="{{ route('notes.show',$note->id) }}" class="btn btn-info btn-sm"><i class="far fa-eye"></i>Detail</a>
+                        <a href="{{ route('notes.show',$note->id) }}" class="btn btn-info btn-sm"><i class="far fa-eye"></i> Detail</a>
 
-                        <a href="{{ route('notes.edit',$note->id) }}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i>Update</a>
+                        <a href="{{ route('notes.edit',$note->id) }}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i> Update</a>
 
                         @csrf
                         @method('DELETE')
 
-                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i>Delete</button>
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i> Delete</button>
                     </form>
                 </td>
             </tr>

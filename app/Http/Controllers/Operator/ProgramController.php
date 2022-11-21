@@ -20,7 +20,7 @@ class ProgramController extends Controller
 
     public function cetak(program $id)
     {
-        $program = program::find($id);
+        $program = program::where('id', $id->id)->get();
         $guest = Guest::where('program_id', $id->id)->get();
         $pdf = PDF\Pdf::loadview('program.cetak',['program'=>$program,'guest'=>$guest]);
         $pdf->setPaper('A4', 'landscape');

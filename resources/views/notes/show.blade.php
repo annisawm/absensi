@@ -22,12 +22,8 @@
                     <br>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('notes.index') }}"> Back</a>
-                    <a href="/notes/cetak" class="btn btn-primary">
-                            <span class="icon text-white-50">
-                                <i class="fa-solid fa-print"></i>
-                            </span>
-                        <span class="text">Export PDF</span>
+                    <a class="btn btn-primary" href="{{ route('notes.index') }}"><i class="fa-regular fa-circle-left"></i> Kembali</a>
+                    <a href="/notes/cetak" class="btn btn-primary"><i class="fa-solid fa-print"></i><span class="text"> Export PDF</span>
                     </a>
                 </div>
                 <br>
@@ -43,7 +39,7 @@
 
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h4> Pimpinan Sidang/Rapat </h4>
+                    <h4>Pimpinan Sidang/Rapat </h4>
                 </div>
             </div>
 

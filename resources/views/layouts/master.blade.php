@@ -182,7 +182,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; 2022 <a href="http://kominfo.situbondokab.go.id/">Dinas Komunikasi, Informatika dan Persandian</a>
+        <strong>Copyright &copy; 2022 <a href="http://kominfo.situbondokab.go.id/">Dinas Komunikasi dan Informatika</a>
     </footer>
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
