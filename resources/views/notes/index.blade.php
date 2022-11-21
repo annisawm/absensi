@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('title')
+    <title>Notulensi</title>
+@endsection
 @section('header')
     <h1>Notulensi Kegiatan</h1>
 @endsection
@@ -20,13 +23,17 @@
         </div>
     @endif
 
+    <a href="/notes/trash" class="btn btn-md btn-success mb-3">
+        <i class="fas fa-trash-alt"></i> <span class="text">Trash</span>
+    </a>
+
     <table class="table table-bordered">
         <tr>
             <th width="20px" class="text-center">No</th>
             <th>Judul Notulensi</th>
             <th>Acara/Kegiatan</th>
             <th>Tanggal Kegiatan</th>
-            <th width="280px"class="text-center">Action</th>
+            <th width="280px" class="text-center">Action</th>
         </tr>
         @foreach ($notes as $note)
             <tr>
@@ -37,14 +44,28 @@
                 <td class="text-center">
                     <form action="{{ route('notes.destroy',$note->id) }}" method="POST">
 
+<<<<<<< HEAD
                         <a href="{{ route('notes.show',$note->id) }}" class="btn btn-info btn-sm"><i class="far fa-eye"></i> Detail</a>
 
                         <a href="{{ route('notes.edit',$note->id) }}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i> Update</a>
+=======
+                        <a href="{{ route('notes.show',$note->id) }}" class="btn btn-info btn-sm"><i
+                                class="far fa-eye"></i> Detail</a>
+>>>>>>> 8e0fd5801e937ed457e4f0656c11bde9d27a4dc9
 
+                        <a href="{{ route('notes.edit',$note->id) }}" class="btn btn-success btn-sm"><i
+                                class="fas fa-user-edit"></i> Update</a
+                        >
+                        <a href="/notes/hapus/{{ $note->id }}" class="btn btn-danger btn-sm"
+                           onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                            <i class="fas fa-trash-alt"></i> Delete</a>
                         @csrf
+<<<<<<< HEAD
                         @method('DELETE')
 
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i> Delete</button>
+=======
+>>>>>>> 8e0fd5801e937ed457e4f0656c11bde9d27a4dc9
                     </form>
                 </td>
             </tr>
