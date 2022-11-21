@@ -15,9 +15,9 @@ class NoteController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    public function cetak()
+    public function cetak(notes $id)
     {
-        $notes = Note::all();
+        $notes = Note::find($id);
         $pdf = PDF\Pdf::loadview('notes.cetak', ['notes' => $notes]);
         return $pdf->stream();
     }
@@ -82,5 +82,50 @@ class NoteController extends Controller
         $note->delete();
         return redirect()->route('notes.index')
             ->with('success', 'Notulensi Berhasil Di Hapus');
+    }
+
+    public function hapus($id)
+    {
+        $note = Note::find($id);
+        $note->delete();
+
+        return redirect('/notes');
+    }
+
+    public function trash()
+    {
+        $note = Note::onlyTrashed()->get();
+        return view('notes/trash', ['notes' => $note]);
+    }
+
+    public function kembalikan($id)
+    {
+        $note = Note::onlyTrashed()->where('id',$id);
+        $note->restore();
+        return redirect('/notes/trash');
+    }
+
+    public function kembalikan_semua()
+    {
+        $note = Note::onlyTrashed();
+        $note->restore();
+
+        return redirect('/notes/trash');
+    }
+
+    public function hapus_permanen($id)
+    {
+        $note = Note::onlyTrashed()->where('id',$id);
+        $note->forceDelete();
+
+        return redirect('/notes/trash');
+    }
+
+    public function hapus_permanen_semua()
+    {
+        $note = Note::onlyTrashed();
+        $note->forceDelete();
+
+        return redirect('/notes/trash');
     }
 }

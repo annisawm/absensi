@@ -1,16 +1,17 @@
 @extends('layouts.master')
 @section('title')
-    <title>Formulir Kegiatan</title>
-    <title>Tambah Data</title>
+    <title>List Data Program</title>
+@endsection
+@section('header')
+    <h1>List Data Program</h1>
 @endsection
 @section('subheader')
     <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active">Formulir Daftar Kegiatan</li>
+    <li class="breadcrumb-item active">List Data Program</li>
 @endsection
 @section('content')
     <div class="container">
         <div class="card mt-5">
-            <div class="card-header text-center">Data Program</div>
             <div class="card-body">
                 <a href="/program">Back</a>
                 <br/>

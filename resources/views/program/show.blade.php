@@ -22,7 +22,7 @@
                 </div>
                 <div class="pull-right">
                     <a class="btn btn-primary" href="{{ route('program.index') }}"> Back</a>
-                    <a class="btn btn-primary" href="{{route('program.cetak',$program->id)}}">Export PDF</a>
+                    <a class="btn btn-primary" href="{{route('program.cetak',$program->id)}}"> <i class="fa-solid fa-print"></i>Export PDF</a>
                 </div>
                 <br>
             </div>
