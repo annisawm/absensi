@@ -22,14 +22,8 @@
                     <br>
                 </div>
                 <div class="pull-right">
-<<<<<<< HEAD
                     <a class="btn btn-primary" href="{{ route('notes.index') }}"><i class="fa-regular fa-circle-left"></i> Kembali</a>
                     <a href="/notes/cetak" class="btn btn-primary"><i class="fa-solid fa-print"></i><span class="text"> Export PDF</span>
-=======
-                    <a class="btn btn-primary" href="{{ route('notes.index') }}"> Back</a>
-                    <a href="/notes/cetak" class="btn btn-primary">
-                        <i class="fa-solid fa-print"></i> <span class="text">Export PDF</span>
->>>>>>> 8e0fd5801e937ed457e4f0656c11bde9d27a4dc9
                     </a>
                 </div>
                 <br>

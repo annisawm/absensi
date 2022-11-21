@@ -43,29 +43,11 @@
                 <td>{{ $note->programs->tanggal }}</td>
                 <td class="text-center">
                     <form action="{{ route('notes.destroy',$note->id) }}" method="POST">
-
-<<<<<<< HEAD
                         <a href="{{ route('notes.show',$note->id) }}" class="btn btn-info btn-sm"><i class="far fa-eye"></i> Detail</a>
-
                         <a href="{{ route('notes.edit',$note->id) }}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i> Update</a>
-=======
-                        <a href="{{ route('notes.show',$note->id) }}" class="btn btn-info btn-sm"><i
-                                class="far fa-eye"></i> Detail</a>
->>>>>>> 8e0fd5801e937ed457e4f0656c11bde9d27a4dc9
-
-                        <a href="{{ route('notes.edit',$note->id) }}" class="btn btn-success btn-sm"><i
-                                class="fas fa-user-edit"></i> Update</a
-                        >
-                        <a href="/notes/hapus/{{ $note->id }}" class="btn btn-danger btn-sm"
-                           onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-                            <i class="fas fa-trash-alt"></i> Delete</a>
                         @csrf
-<<<<<<< HEAD
                         @method('DELETE')
-
                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i> Delete</button>
-=======
->>>>>>> 8e0fd5801e937ed457e4f0656c11bde9d27a4dc9
                     </form>
                 </td>
             </tr>

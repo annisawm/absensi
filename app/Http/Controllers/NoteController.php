@@ -15,14 +15,12 @@ class NoteController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    public function cetak(notes $id)
+    public function cetak()
     {
-        $notes = Note::find($id);
+        $notes = Note::all();
         $pdf = PDF\Pdf::loadview('notes.cetak', ['notes' => $notes]);
         return $pdf->stream();
     }
-
-
 
     public function create()
     {

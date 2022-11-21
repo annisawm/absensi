@@ -38,8 +38,8 @@
                             <td>{{ $n->programs->acara }}</td>
                             <td>{{ $n->programs->tanggal }}</td>
                             <td>
-                                <a href="/notes/kembalikan/{{ $n->id }}" class="btn btn-success btn-sm"  onclick="return confirm('Apakah Anda yakin ingin mengembalikan data ini?')"><i class="fas fa-trash-restore"></i>Restore</a>
-                                <a href="/notes/hapus_permanen/{{ $n->id }}" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus permanen data ini?')"><i class="fas fa-trash-alt"></i>Hapus Permanen</a>
+                                <a href="/notes/kembalikan/{{ $n->id }}" class="btn btn-success btn-sm"  onclick="return confirm('Apakah Anda yakin ingin mengembalikan data ini?')"><i class="fas fa-trash-restore"></i> Restore</a>
+                                <a href="/notes/hapus_permanen/{{ $n->id }}" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus permanen data ini?')"><i class="fas fa-trash-alt"></i> Hapus Permanen</a>
                             </td>
                         </tr>
                     @endforeach

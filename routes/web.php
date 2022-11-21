@@ -36,9 +36,9 @@ Route::get('/notes/kembalikan/{id}', [NoteController::class, 'kembalikan']);
 Route::get('/notes/kembalikan_semua', [NoteController::class, 'kembalikan_semua']);
 Route::get('/notes/hapus_permanen/{id}', [NoteController::class, 'hapus_permanen']);
 Route::get('/notes/hapus_permanen_semua', [NoteController::class, 'hapus_permanen_semua']);
+
 // Route Cetak PDF Notes
 Route::get('/notes/cetak', [NoteController::class, 'cetak']);
-
 
 // Route Controller
 Route::resource('/guest', GuestController::class);

@@ -21,13 +21,8 @@
                     <br>
                 </div>
                 <div class="pull-right">
-<<<<<<< HEAD
                     <a class="btn btn-primary" href="{{ route('program.index') }}"><i class="fa-regular fa-circle-left"></i> Kembali</a>
                     <a class="btn btn-primary" href="{{route('program.cetak',$program->id)}}"><i class="fa-solid fa-print"></i> Export PDF</a>
-=======
-                    <a class="btn btn-primary" href="{{ route('program.index') }}"> Back</a>
-                    <a class="btn btn-primary" href="{{route('program.cetak',$program->id)}}"> <i class="fa-solid fa-print"></i>Export PDF</a>
->>>>>>> 8e0fd5801e937ed457e4f0656c11bde9d27a4dc9
                 </div>
                 <br>
             </div>
