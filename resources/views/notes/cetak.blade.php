@@ -4,6 +4,12 @@
     <title>Notulensi</title>
 </head>
 <body>
+@foreach($program as $p)
+    <p>Acara: {{ $p->acara}}</p>
+    <p>Tanggal Kegiatan: {{ $p->tanggal}}</p>
+    <p>Waktu Kegiatan: {{ $p->waktu}}</p>
+    <p>Tempat: {{ $p->tempat}}</p>
+@endforeach
 @foreach($notes as $n)
     <h4 align="center">NOTULEN</h4>
     <p>Judul                  : {{ $n->judul}}</p>

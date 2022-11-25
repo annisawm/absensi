@@ -28,6 +28,8 @@ Route::get('/program/kembalikan_semua', [ProgramController::class, 'kembalikan_s
 Route::get('/program/hapus_permanen/{id}', [ProgramController::class, 'hapus_permanen']);
 Route::get('/program/hapus_permanen_semua', [ProgramController::class, 'hapus_permanen_semua']);
 
+// Route Cetak PDF Notes
+Route::get('/notes/cetak/{id}', [NoteController::class, 'cetak'])->name('notes.cetak');
 
 // Route Soft Delete Notes
 Route::get('/notes/hapus/{id}', [NoteController::class, 'hapus']);
@@ -36,9 +38,6 @@ Route::get('/notes/kembalikan/{id}', [NoteController::class, 'kembalikan']);
 Route::get('/notes/kembalikan_semua', [NoteController::class, 'kembalikan_semua']);
 Route::get('/notes/hapus_permanen/{id}', [NoteController::class, 'hapus_permanen']);
 Route::get('/notes/hapus_permanen_semua', [NoteController::class, 'hapus_permanen_semua']);
-
-// Route Cetak PDF Notes
-Route::get('/notes/cetak', [NoteController::class, 'cetak']);
 
 // Route Controller
 Route::resource('/guest', GuestController::class);
@@ -50,9 +49,6 @@ Route::resource('/notes', NoteController::class);
 Route::get('/program/cetak/{id}', [ProgramController::class, 'cetak'])->name('program.cetak');
 
 // Route Soft Delete Program
-
-
-
 
 // Route Signature Pad
 Route::get('signature-pad',[SignatureController::class, 'index']);

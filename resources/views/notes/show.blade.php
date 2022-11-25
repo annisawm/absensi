@@ -2,10 +2,6 @@
 @section('title')
     <title> Notulensi </title>
 @endsection
-@section('subheader')
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active">Notulensi</li>
-@endsection
 @push('css')
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
@@ -23,7 +19,8 @@
                 </div>
                 <div class="pull-right">
                     <a class="btn btn-primary" href="{{ route('notes.index') }}"><i class="fa-regular fa-circle-left"></i> Kembali</a>
-                    <a href="/notes/cetak" class="btn btn-primary"><i class="fa-solid fa-print"></i><span class="text"> Export PDF</span>
+
+                    <a href="{{route('notes.cetak', $note->id)}}" class="btn btn-primary"><i class="fa-solid fa-print"></i><span class="text"> Export PDF</span>
                     </a>
                 </div>
                 <br>

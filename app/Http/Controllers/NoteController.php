@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+//use App\Models\Guest;
+use App\Models\Program;
 use Illuminate\Http\Request;
 use App\Models\Note;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -15,10 +17,12 @@ class NoteController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    public function cetak()
+    public function cetak(note $id)
     {
-        $notes = Note::all();
-        $pdf = PDF\Pdf::loadview('notes.cetak', ['notes' => $notes]);
+        $notes = Note::where('id', $id->id)->get();
+        $program = Program::where('id', $id->program_id)->get();
+        $pdf = PDF\Pdf::loadview('notes.cetak', ['notes' => $notes,'program'=>$program]);
+        $pdf->setPaper('A4', 'potrait');
         return $pdf->stream();
     }
 
