@@ -2,10 +2,6 @@
 @section('title')
     <title>Formulir Daftar Kegiatan</title>
 @endsection
-@section('subheader')
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active">Formulir Daftar Kegiatan</li>
-@endsection
 @push('css')
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
@@ -17,7 +13,7 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <h2> Detail Kegiatan</h2>
+                    <h2>Detail Kegiatan</h2>
                     <br>
                 </div>
                 <div class="pull-right">
@@ -70,7 +66,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Daftar Hadir Kegiatan</h3>
+                <h2 class="card-title">Daftar Hadir Kegiatan</h2>
             </div>
             <div class="card-body">
                 <table class="table table-bordered" id="tabel_guest">

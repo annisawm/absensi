@@ -6,11 +6,6 @@
 @section('header')
     <h1>Notulensi Kegiatan</h1>
 @endsection
-@section('subheader')
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active">Notulensi</li>
-@endsection
-
 @section('content')
     <div class="row mt-5 mb-5">
         <div class="col-lg-12 margin-tb">

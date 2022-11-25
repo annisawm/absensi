@@ -5,10 +5,6 @@
 @section('header')
     <h1>List Data Program</h1>
 @endsection
-@section('subheader')
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active">List Data Program</li>
-@endsection
 @section('content')
     <div class="container">
         <div class="card mt-5">

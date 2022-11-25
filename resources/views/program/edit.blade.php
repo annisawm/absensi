@@ -11,10 +11,6 @@
 @section('header')
     <h1>Formulir Daftar Kegiatan</h1>
 @endsection
-@section('subheader')
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item active">Formulir Daftar Kegiatan</li>
-@endsection
 @section('content')
     <div class="container mt-5 mb-5">
         <div class="row">
