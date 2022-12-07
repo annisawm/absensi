@@ -23,17 +23,15 @@
                             </span>
                             <span class="text">Tambah Data</span>
                         </a>
-                        <a href="/program/trash" class="btn btn-md btn-success mb-3">
-                            <span class="icon text-white-50">
-                                <i class="fas fa-trash-alt"></i>
-                            </span>
-                            <span class="text">Trash</span>
-                        </a>
-{{--                        <a href="{{ route('program.create') }}" class="btn btn-md btn-success mb-3">TAMBAH</a>--}}
+{{--                        <a href="/program/trash" class="btn btn-md btn-success mb-3">--}}
+{{--                            <span class="icon text-white-50">--}}
+{{--                                <i class="fas fa-trash-alt"></i>--}}
+{{--                            </span>--}}
+{{--                            <span class="text">Trash</span>--}}
+{{--                        </a>--}}
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-{{--                                <th scope="col">NO</th>--}}
                                 <th scope="col">ACARA/KEGIATAN</th>
                                 <th scope="col">TANGGAL KEGIATAN</th>
                                 <th scope="col">WAKTU KEGIATAN</th>

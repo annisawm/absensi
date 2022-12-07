@@ -53,7 +53,7 @@
     <div class="container text-center">
         <div class="col-md-12">
             <h1>
-                Sistem Absensi Manajemen Rapat
+                Sistem Manajemen Daftar Hadir Rapat
             </h1>
 
             <p class="tagline">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Operator;
 
 use App\Http\Controllers\Controller;
 use App\Models\Guest;
+use App\Models\Note;
 use App\Models\Program;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -83,6 +84,7 @@ class ProgramController extends Controller
     public function destroy($id)
     {
         $program = program::findOrFail($id);
+        Note::where('program_id', $program->id)->delete();
         $program->delete();
         return redirect()->route('program.index')
             ->with('success', 'Data Program Berhasil Di Hapus');
@@ -90,7 +92,8 @@ class ProgramController extends Controller
 
     public function hapus($id)
     {
-        $program = program::find($id);
+        $program = program::findOrFail($id);
+        Note::where('program_id', $program->id)->delete();
         $program->delete();
 
         return redirect('/program');
@@ -109,26 +112,10 @@ class ProgramController extends Controller
         return redirect('/program/trash');
     }
 
-    public function kembalikan_semua()
-    {
-
-        $program = program::onlyTrashed();
-        $program->restore();
-
-        return redirect('/program/trash');
-    }
 
     public function hapus_permanen($id)
     {
         $program = program::onlyTrashed()->where('id',$id);
-        $program->forceDelete();
-
-        return redirect('/program/trash');
-    }
-
-    public function hapus_permanen_semua()
-    {
-        $program = program::onlyTrashed();
         $program->forceDelete();
 
         return redirect('/program/trash');
