@@ -1,4 +1,4 @@
-@extends('layouts.master')
+{{-- @extends('layouts.master')
 @section('title')
     <title>Data Admin</title>
 @endsection
@@ -23,4 +23,4 @@
             </div>
             &nbsp &nbsp
         </div>
-@endsection
+@endsection --}}

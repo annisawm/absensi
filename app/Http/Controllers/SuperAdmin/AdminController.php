@@ -36,11 +36,11 @@ class AdminController extends Controller
             ->with('success', 'Data Admin Berhasil Dibuat');
     }
 
-    public function show($id)
-    {
-        $user = User::find($id);
-        return view('superAdmin.show', compact('user'));
-    }
+    // public function show($id)
+    // {
+    //     $user = User::find($id);
+    //     return view('superAdmin.show', compact('user'));
+    // }
 
     public function edit($id)
     {

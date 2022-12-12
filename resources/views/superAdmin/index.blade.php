@@ -36,7 +36,6 @@
                                     <td>{!! $user->name !!}</td>
                                     <td>{!! $user->email !!}</td>
                                     <td class="text-lg-left">
-                                        <a href="/superAdmin/{{$user->id }}" class="btn btn-info btn-sm"><i class="far fa-eye"></i> Detail</a>
                                         <a href="/superAdmin/{{$user->id}}/edit" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i> Update</a>
                                         <form action="/superAdmin/{{$user->id }}" method="POST" class="d-inline">
                                             @method('delete')
