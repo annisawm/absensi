@@ -149,6 +149,16 @@
                         </a>
                     </li>
                     @endcan
+
+                    @can('superAdmin')
+                        <li class="nav-item">
+                            <a href="../superAdmin" class="nav-link active">
+                                <i class="fa-solid fa-list"></i>
+                                &nbsp Data Admin
+                            </a>
+                        </li>
+                    @endcan
+
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

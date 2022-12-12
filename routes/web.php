@@ -3,6 +3,7 @@
 use App\Http\Controllers\Operator\GuestController;
 use App\Http\Controllers\Operator\ProgramController;
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\SuperAdmin\AdminController;
 use App\Http\Controllers\SignatureController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,7 +44,7 @@ Route::get('/notes/hapus_permanen_semua', [NoteController::class, 'hapus_permane
 Route::resource('/guest', GuestController::class);
 Route::resource('/program', ProgramController::class);
 Route::resource('/notes', NoteController::class);
-
+Route::resource('/superAdmin', AdminController::class);
 
 // Route Cetak PDF Program
 Route::get('/program/cetak/{id}', [ProgramController::class, 'cetak'])->name('program.cetak');
