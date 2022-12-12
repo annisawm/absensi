@@ -103,7 +103,7 @@ class GuestController extends Controller
             'jenis_kelamin' => 'required',
             'opd_kode' => 'required',
             'jabatan' => 'required',
-            'no_hp' => 'required',
+            'no_hp' => 'required|numeric',
 //            'signature' => 'required',
         ]);
 

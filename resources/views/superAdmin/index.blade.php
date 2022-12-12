@@ -13,7 +13,7 @@
     @endif
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
                         <a href="{{ route('superAdmin.create') }}" class="btn btn-md btn-success mb-3">
@@ -35,7 +35,7 @@
                                 <tr>
                                     <td>{!! $user->name !!}</td>
                                     <td>{!! $user->email !!}</td>
-                                    <td class="text-lg-center">
+                                    <td class="text-lg-left">
                                         <a href="/superAdmin/{{$user->id }}" class="btn btn-info btn-sm"><i class="far fa-eye"></i> Detail</a>
                                         <a href="/superAdmin/{{$user->id}}/edit" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i> Update</a>
                                         <form action="/superAdmin/{{$user->id }}" method="POST" class="d-inline">

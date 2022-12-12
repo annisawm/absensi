@@ -28,8 +28,8 @@ class AdminController extends Controller
         $this->validate($request, [
             'role_id' => 'required',
             'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8',
         ]);
         User::create($request->all());
         return redirect()->route('superAdmin.index')
