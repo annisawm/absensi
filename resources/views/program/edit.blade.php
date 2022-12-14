@@ -23,7 +23,7 @@
                             @method('PUT')
 
                             <div class="form-group">
-                                <label class="font-weight-bold">ACARA</label>
+                                <label class="font-weight-bold">SIDANG/RAPAT</label>
                                 <input type="text"
                                        class="form-control @error('acara') is-invalid @enderror"
                                        name="acara" value="{{ old('acara', $program->acara) }}"
@@ -31,6 +31,36 @@
 
 
                                 @error('acara')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">JAM SIDANG/RAPAT</label>
+                                <input id="waktu" type="text"
+                                       class="form-control @error('waktu') is-invalid @enderror"
+                                       name="waktu" value="{{ old('waktu', $program->waktu) }}"
+                                       placeholder="Masukkan Waktu Kegiatan">
+
+
+                                @error('waktu')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">JAM PANGGILAN</label>
+                                <input id="jam" type="text"
+                                       class="form-control @error('jam') is-invalid @enderror"
+                                       name="jam" value="{{ old('jam', $program->jam) }}"
+                                       placeholder="Masukkan jam Kegiatan">
+
+
+                                @error('jam')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
                                 </div>
@@ -46,22 +76,6 @@
 
 
                                 @error('tanggal')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-
-
-                            <div class="form-group">
-                                <label class="font-weight-bold">WAKTU KEGIATAN</label>
-                                <input id="waktu" type="text"
-                                       class="form-control @error('waktu') is-invalid @enderror"
-                                       name="waktu" value="{{ old('waktu', $program->waktu) }}"
-                                       placeholder="Masukkan Waktu Kegiatan">
-
-
-                                @error('waktu')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
                                 </div>
@@ -111,6 +125,10 @@
 
 
                     $('#waktu').datetimepicker({
+                        format: 'HH:mm'
+                    });
+
+                    $('#jam').datetimepicker({
                         format: 'HH:mm'
                     });
                 });

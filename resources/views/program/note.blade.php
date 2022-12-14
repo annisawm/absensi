@@ -18,8 +18,22 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Acara: </strong>
+                <strong>Sidang/Rapat: </strong>
                 {{$program->acara }}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Jam Sidang/Rapat: </strong>
+                {{$program->waktu}}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Jam Panggilan: </strong>
+                {{$program->jam}}
             </div>
         </div>
 
@@ -27,13 +41,6 @@
             <div class="form-group">
                 <strong>Tanggal Kegiatan: </strong>
                 {{$program->tanggal}}
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Waktu Kegiatan: </strong>
-                {{$program->waktu}}
             </div>
         </div>
 

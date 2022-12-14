@@ -22,7 +22,7 @@
 
                             @csrf
                             <div class="form-group">
-                                <label class="font-weight-bold">ACARA</label>
+                                <label class="font-weight-bold">SIDANG/RAPAT</label>
                                 <input type="text"
                                        class="form-control @error('acara') is-invalid @enderror"
                                        name="acara" value="{{ old('acara') }}"
@@ -36,6 +36,35 @@
                                     @enderror
                                 </div>
 
+                                <div class="form-group">
+                                    <label class="font-weight-bold">JAM SIDANG/RAPAT</label>
+                                    <input id="waktu" type="text"
+                                           class="form-control @error('waktu') is-invalid @enderror"
+                                           name="waktu" value="{{ old('waktu') }}"
+                                           placeholder="Masukkan Waktu Kegiatan">
+
+                                    <!-- error message untuk title -->
+                                    @error('waktu')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="font-weight-bold">JAM PANGGILAN</label>
+                                    <input id="jam" type="text"
+                                           class="form-control @error('jam') is-invalid @enderror"
+                                           name="jam" value="{{ old('jam') }}"
+                                           placeholder="Masukkan Jam Panggilan">
+
+                                    <!-- error message untuk title -->
+                                    @error('jam')
+                                    <div class="alert alert-danger mt-2">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+                                </div>
 
                                 <div class="form-group">
                                     <label class="font-weight-bold">TANGGAL KEGIATAN</label>
@@ -53,22 +82,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="font-weight-bold">WAKTU KEGIATAN</label>
-                                    <input id="waktu" type="text"
-                                           class="form-control @error('waktu') is-invalid @enderror"
-                                           name="waktu" value="{{ old('waktu') }}"
-                                           placeholder="Masukkan Waktu Kegiatan">
-
-                                    <!-- error message untuk title -->
-                                    @error('waktu')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="font-weight-bold">Tempat</label>
+                                    <label class="font-weight-bold">TEMPAT</label>
                                     <input type="text"
                                            class="form-control @error('tempat') is-invalid @enderror"
                                            name="tempat" value="{{ old('tempat') }}"
@@ -80,6 +94,7 @@
                                         {{ $message }}
                                     </div>
                                     @enderror
+                                    <br>
 
                                     <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
                                     <button type="reset" class="btn btn-md btn-warning">RESET</button>
@@ -107,6 +122,10 @@
                 locale: 'id',
             });
 
+
+            $('#jam').datetimepicker({
+                format: 'HH:mm'
+            });
 
             $('#waktu').datetimepicker({
                 format: 'HH:mm'

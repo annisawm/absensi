@@ -13,7 +13,7 @@ class Program extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'acara', 'tanggal', 'waktu', 'tempat',
+        'acara', 'tanggal', 'waktu', 'tempat', 'jam',
     ];
 
     public function notes(){

@@ -32,9 +32,10 @@
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <th scope="col">ACARA/KEGIATAN</th>
-                                <th scope="col">TANGGAL KEGIATAN</th>
-                                <th scope="col">WAKTU KEGIATAN</th>
+                                <th scope="col">SIDANG/RAPAT</th>
+                                <th scope="col">JAM SIDANG/RAPAT</th>
+                                <th scope="col">JAM PANGGILAN</th>
+                                <th scope="col">HARI/TANGGAL</th>
                                 <th scope="col">TEMPAT</th>
                                 <th scope="col">ACTION</th>
                             </tr>
@@ -44,8 +45,9 @@
                                 <tr>
 {{--                                    <td>{!! ++$i !!}</td>--}}
                                     <td>{!! $program->acara !!}</td>
-                                    <td>{!! $program->tanggal !!}</td>
                                     <td>{!! $program->waktu !!}</td>
+                                    <td>{!! $program->jam !!}</td>
+                                    <td>{!! $program->tanggal !!}</td>
                                     <td>{!! $program->tempat !!}</td>
                                     <td class="text-center">
                                         <a href="/program/{{$program->id }}" class="btn btn-info btn-sm"><i class="far fa-eye"></i> Detail</a>

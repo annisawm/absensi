@@ -5,9 +5,12 @@
 </head>
 <body>
 <h4 align="center">NOTULEN</h4>
+@foreach($notes as $no)
+    <p>SIDANG/RAPAT : {{ $no->judul}}</p>
+@endforeach
 @foreach($program as $p)
-    <p>SIDANG/RAPAT : {{ $p->judul}}</p>
     <p>Hari/Tanggal: {{ $p->tanggal}}</p>
+    <p>Jam Panggilan: {{ $p->jam}}</p>
     <p>Jam sidang/rapat: {{ $p->waktu}}</p>
     <p>Acara: {{ $p->acara}}</p>
 @endforeach
