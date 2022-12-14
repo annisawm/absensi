@@ -4,15 +4,14 @@
     <title>Notulensi</title>
 </head>
 <body>
+<h4 align="center">NOTULEN</h4>
 @foreach($program as $p)
+    <p>SIDANG/RAPAT : {{ $p->judul}}</p>
+    <p>Hari/Tanggal: {{ $p->tanggal}}</p>
+    <p>Jam sidang/rapat: {{ $p->waktu}}</p>
     <p>Acara: {{ $p->acara}}</p>
-    <p>Tanggal Kegiatan: {{ $p->tanggal}}</p>
-    <p>Waktu Kegiatan: {{ $p->waktu}}</p>
-    <p>Tempat: {{ $p->tempat}}</p>
 @endforeach
 @foreach($notes as $n)
-    <h4 align="center">NOTULEN</h4>
-    <p>Judul                  : {{ $n->judul}}</p>
     <p>PIMPINAN SIDANG/RAPAT</p>
     <p>Ketua                  : {{ $n->ketua}}</p>
     <p>Sekretaris             : {{ $n->sekretaris}}</p>

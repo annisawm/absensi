@@ -132,7 +132,7 @@
                             &nbsp Home
                         </a>
                     </li>
-{{--                    @canany(['superAdmin','admin'])--}}
+{{--                    @canany(['superAdmin','operator'])--}}
 {{--                    <li class="nav-item">--}}
 {{--                        <a href="../absensi" class="nav-link active">--}}
 {{--                            <i class="fa-solid fa-user-group"></i>--}}
@@ -141,20 +141,35 @@
 {{--                    </li>--}}
 {{--                    @endcanany--}}
 
-                    @can('admin')
-                    <li class="nav-item">
-                        <a href="../program" class="nav-link active">
-                            <i class="fa-solid fa-list"></i>
-                            &nbsp Form Daftar Kegiatan
-                        </a>
-                    </li>
-                    @endcan
-
                     @can('superAdmin')
                         <li class="nav-item">
                             <a href="../superAdmin" class="nav-link active">
                                 <i class="fa-solid fa-list"></i>
                                 &nbsp Data Admin
+                            </a>
+                        </li>
+                    @endcan
+
+                    @can('admin')
+                        <li class="nav-item">
+                            <a href="../operator" class="nav-link active">
+                                <i class="fa-solid fa-list"></i>
+                                &nbsp Data Operator
+                            </a>
+                        </li>
+                    @endcan
+
+                    @can('operator')
+                        <li class="nav-item">
+                            <a href="../program" class="nav-link active">
+                                <i class="fa-solid fa-list"></i>
+                                &nbsp Form Daftar Kegiatan
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../pejabat" class="nav-link active">
+                                <i class="fa-solid fa-list"></i>
+                                &nbsp Data Pejabat
                             </a>
                         </li>
                     @endcan

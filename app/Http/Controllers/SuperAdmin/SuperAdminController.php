@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\SuperAdmin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class AdminController extends Controller
+class SuperAdminController extends Controller
 {
     public function index()
     {
@@ -31,9 +30,11 @@ class AdminController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:8',
         ]);
+        $request['password']=Hash::make($request->password);
+
         User::create($request->all());
         return redirect()->route('superAdmin.index')
-            ->with('success', 'Data Admin Berhasil Dibuat');
+            ->with('success', 'Data operator Berhasil Dibuat');
     }
 
     // public function show($id)
@@ -59,7 +60,7 @@ class AdminController extends Controller
         $user=User::findOrFail($id);
         $user->update($request->all());
         return redirect()->route('superAdmin.index')
-            ->with('success', 'Data Admin Berhasil Di Update');
+            ->with('success', 'Data operator Berhasil Di Update');
     }
 
     public function destroy($id)
@@ -67,7 +68,7 @@ class AdminController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         return redirect()->route('superAdmin.index')
-            ->with('success', 'Data Admin Berhasil Di Hapus');
+            ->with('success', 'Data operator Berhasil Di Hapus');
     }
 
 
