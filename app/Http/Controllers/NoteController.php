@@ -22,7 +22,7 @@ class NoteController extends Controller
         $notes = Note::where('id', $id->id)->get();
         $program = Program::where('id', $id->program_id)->get();
         $pdf = PDF\Pdf::loadview('notes.cetak', ['notes' => $notes, 'program' => $program]);
-        $pdf->setPaper('A4', 'potrait');
+        $pdf->setPaper('F4', 'potrait');
         return $pdf->stream();
     }
 

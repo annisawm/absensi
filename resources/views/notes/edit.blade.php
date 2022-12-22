@@ -1,8 +1,10 @@
-{{--@extends('template_tinymce')--}}
 @extends('layouts.master')
 @section('header')
     <h1>Notulensi Kegiatan</h1>
 @endsection
+@push('css')
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+@endpush
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -87,7 +89,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>Peserta Sidang/Rapat:</strong>
-                                        <textarea id="mytextarea" class="form-control" style="height:150px"
+                                        <textarea id="peserta" class="form-control" style="height:150px"
                                                   name="peserta"
                                                   placeholder="Peserta Rapat">{{ $note->peserta }}</textarea>
                                     </div>
@@ -104,7 +106,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>Isi:</strong>
-                                        <textarea id="mytextarea" class="form-control" style="height:150px" name="isi"
+                                        <textarea id="isi" class="form-control" style="height:150px" name="isi"
                                                   placeholder="Isi Kegiatan Rapat">{{ $note->isi }}</textarea>
                                     </div>
                                 </div>
@@ -113,7 +115,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>1. Kata Pembukaan</strong>
-                                        <textarea id="mytextarea" class="form-control" style="height:150px"
+                                        <textarea id="pembuka" class="form-control" style="height:150px"
                                                   name="pembuka"
                                                   placeholder="Kata Pembukaan">{{ $note->pembuka }}</textarea>
                                     </div>
@@ -123,7 +125,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>2. Pembahasan:</strong>
-                                        <textarea id="mytextarea" class="form-control" style="height:150px"
+                                        <textarea id="pembahasan" class="form-control" style="height:150px"
                                                   name="pembahasan"
                                                   placeholder="Pembahasan">{{ $note->pembahasan }}</textarea>
                                     </div>
@@ -133,7 +135,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
                                         <strong>3. Keputusan:</strong>
-                                        <textarea id="mytextarea" class="form-control" style="height:150px"
+                                        <textarea id="keputusan" class="form-control" style="height:150px"
                                                   name="keputusan"
                                                   placeholder="Keputusan">{{ $note->keputusan }}</textarea>
                                     </div>
@@ -143,4 +145,44 @@
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
+
+@push('js')
+    <script
+        src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#peserta').summernote();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#isi').summernote();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#pembuka').summernote();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#pembahasan').summernote();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#penutup').summernote();
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#keputusan').summernote();
+        });
+    </script>
+@endpush

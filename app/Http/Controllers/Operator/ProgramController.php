@@ -16,7 +16,7 @@ class ProgramController extends Controller
         $programs = Program::latest()->paginate(10);
 
         return view('program.index', compact('programs'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);;
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function cetak(program $id)
@@ -24,7 +24,7 @@ class ProgramController extends Controller
         $program = program::where('id', $id->id)->get();
         $guest = Guest::where('program_id', $id->id)->get();
         $pdf = PDF\Pdf::loadview('program.cetak',['program'=>$program,'guest'=>$guest]);
-        $pdf->setPaper('A4', 'landscape');
+        $pdf->setPaper('F4', 'landscape');
         return $pdf->stream();
     }
 

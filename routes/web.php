@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Operator\GuestController;
+//use App\Http\Controllers\Operator\GuestController;
 use App\Http\Controllers\Operator\ProgramController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\SuperAdmin\SuperAdminController;
@@ -45,7 +45,7 @@ Route::get('/notes/hapus_permanen/{id}', [NoteController::class, 'hapus_permanen
 Route::get('/notes/hapus_permanen_semua', [NoteController::class, 'hapus_permanen_semua']);
 
 // Route Controller
-Route::resource('/guest', GuestController::class);
+//Route::resource('/guest', GuestController::class);
 Route::resource('/program', ProgramController::class);
 Route::resource('/notes', NoteController::class);
 Route::resource('/superAdmin', SuperAdminController::class);
