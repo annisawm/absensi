@@ -38,9 +38,13 @@
                 <td>{{ $note->programs->acara }}</td>
                 <td>{{ $note->programs->tanggal }}</td>
                 <td class="text-center">
-                    <form action="{{ route('notes.destroy',$note->id) }}" method="POST">
+{{--                    <form action="{{ route('notes.destroy',$note->id) }}" method="POST">--}}
+                    @canany(['operator','pejabat'])
                         <a href="{{ route('notes.show',$note->id) }}" class="btn btn-info btn-sm"><i class="far fa-eye"></i> Detail</a>
+                    @endcanany
+                    @can('operator')
                         <a href="{{ route('notes.edit',$note->id) }}" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i> Update</a>
+                    @endcan
 {{--                        @csrf--}}
 {{--                        @method('DELETE')--}}
 {{--                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i> Delete</button>--}}

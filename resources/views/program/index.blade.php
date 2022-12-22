@@ -50,13 +50,17 @@
                                     <td>{!! $program->tanggal !!}</td>
                                     <td>{!! $program->tempat !!}</td>
                                     <td class="text-center">
+                                        @canany(['operator','pejabat'])
                                         <a href="/program/{{$program->id }}" class="btn btn-info btn-sm"><i class="far fa-eye"></i> Detail</a>
+                                        @endcanany
+                                        @can('operator')
                                         <a href="/program/{{$program->id}}/edit" class="btn btn-success btn-sm"><i class="fas fa-user-edit"></i> Update</a>
                                         <form action="/program/{{$program->id }}" method="POST" class="d-inline">
                                             @method('delete')
                                             @csrf
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt"></i> Delete</button>
                                         </form>
+                                            @endcan
                                     </td>
                                 </tr>
                             @empty

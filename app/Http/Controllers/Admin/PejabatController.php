@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Opd;
+use App\Models\Pejabat;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -11,28 +13,34 @@ class PejabatController extends Controller
 {
     public function index()
     {
-        $users = User::where('role_id', 5)->paginate(10);
-        return view('pejabat.index', compact('users'))
+        $pejabats = Pejabat::where('role_id', 5)->paginate(10);
+        return view('pejabat.index', compact('pejabats'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
-        return view('pejabat.create');
+        $opd = Opd::all();
+        return view('pejabat.create', compact('opd'));
     }
 
     public function store(Request $request)
     {
         $request->merge(['role_id' => 5]);
         $this->validate($request, [
-            'role_id' => 'required',
+            'nip' => 'nullable|numeric|digits: 18',
             'name' => 'required',
+            'jenis_kelamin' => 'required',
+            'opd_kode' => 'required',
+            'jabatan' => 'required',
             'email' => 'required|email',
             'password' => 'required|min:8',
         ]);
         $request['password']=Hash::make($request->password);
 
-        User::create($request->all());
+        $data=User::create($request->all());
+        $request['user_id']=$data->id;
+        Pejabat::create($request->all());
         return redirect()->route('pejabat.index')
             ->with('success', 'Data Berhasil Dibuat');
     }

@@ -157,15 +157,6 @@
                                 &nbsp Data Operator
                             </a>
                         </li>
-                    @endcan
-
-                    @can('operator')
-                        <li class="nav-item">
-                            <a href="../program" class="nav-link active">
-                                <i class="fa-solid fa-list"></i>
-                                &nbsp Form Daftar Kegiatan
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a href="../pejabat" class="nav-link active">
                                 <i class="fa-solid fa-list"></i>
@@ -173,6 +164,15 @@
                             </a>
                         </li>
                     @endcan
+
+                    @canany(['operator','pejabat'])
+                        <li class="nav-item">
+                            <a href="../program" class="nav-link active">
+                                <i class="fa-solid fa-list"></i>
+                                &nbsp Form Daftar Kegiatan
+                            </a>
+                        </li>
+                    @endcanany
 
                 </ul>
             </nav>
